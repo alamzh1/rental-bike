@@ -1,0 +1,795 @@
+// Модель данных «Аренда Байка» (ТЗ §10.2 + Setting, AuditLog, AnalyticsEvent, I18nOverride, Favorite).
+// Деньги — целые VND (Int). Время — UTC (timestamptz). Тексты из админки — I18nText JSON { ru?, en, vi? }.
+// Схему и миграции меняет только таск 01; остальным — BLOCKED с описанием.
+// Exclusion constraint броней и триггер blocked_until — SQL в миграции init (Prisma их не описывает).
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["postgresqlExtensions"]
+}
+
+datasource db {
+  provider   = "postgresql"
+  url        = env("DATABASE_URL")
+  extensions = [btree_gist]
+}
+
+// ---------- Перечисления ----------
+
+enum Role {
+  CLIENT
+  MANAGER
+  OWNER
+  ADMIN
+}
+
+enum Lang {
+  ru
+  en
+  vi
+}
+
+enum Currency {
+  VND
+  RUB
+  USD
+}
+
+enum VerificationStatus {
+  NONE
+  PENDING
+  VERIFIED
+  REJECTED
+}
+
+enum LicenseCategory {
+  A1
+  A
+  NONE
+}
+
+enum DocumentType {
+  PASSPORT
+  LICENSE
+  IDP
+}
+
+enum DocumentStatus {
+  UPLOADED
+  VERIFIED
+  REJECTED
+}
+
+enum ModelCategory {
+  SCOOTER // скутер 110–125
+  MAXI_SCOOTER // макси-скутер 150+
+  SEMI_AUTO // полуавтомат
+  MOTORCYCLE // мотоцикл
+  ELECTRIC // электро
+}
+
+enum Transmission {
+  AUTOMATIC
+  SEMI_AUTO
+  MANUAL
+  ELECTRIC
+}
+
+enum BikeStatus {
+  ACTIVE
+  REPAIR
+  RETIRED
+}
+
+enum ExtraPer {
+  DAY
+  ONCE
+}
+
+enum BookingStatus {
+  PENDING_PAYMENT
+  CONFIRMED
+  ISSUED
+  COMPLETED
+  CANCELLED_BY_CLIENT
+  CANCELLED_BY_SYSTEM
+  PROBLEM
+}
+
+enum CancelReason {
+  CLIENT // отменил клиент
+  NOT_PAID // не оплачено вовремя
+  NO_SHOW // неявка
+  ADMIN // отменил администратор
+  BIKE_MISSING // байка не оказалось на месте: возврат полный
+}
+
+enum IncidentStatus {
+  OPEN
+  RESOLVED
+}
+
+enum IncidentResolution {
+  SAME_MODEL // выдан другой байк той же модели
+  BIKE_PRESENT // байк нашёлся на месте
+  REPLACED // клиент согласился на другую модель
+  CANCELLED // отмена с полным возвратом
+}
+
+enum IncidentSource {
+  CLIENT
+  STAFF
+  SYSTEM // предыдущий клиент не вернул байк
+}
+
+enum DeliveryMethod {
+  PICKUP
+  DELIVERY
+}
+
+enum PaymentMethod {
+  VIETQR
+  CASH
+  RUB_TRANSFER // перевод в рублях, подтверждает администратор
+}
+
+enum PaymentKind {
+  RENT // аренда (+ опции, доставка)
+  DEPOSIT
+  PREPAYMENT // предоплата при наличных (cashPrepayPercent)
+  SURCHARGE // доплата (опоздание и т. п.)
+  REFUND // возврат
+}
+
+enum PaymentStatus {
+  PENDING
+  PAID
+  FAILED
+  EXPIRED
+  CANCELLED
+}
+
+enum HandoverKind {
+  ISSUE
+  RETURN
+}
+
+enum PromoType {
+  PERCENT
+  FIXED
+}
+
+enum ExpenseCategory {
+  MAINTENANCE // ТО и расходники
+  REPAIR // ремонт
+  PARTS // запчасти
+  FUEL // топливо
+  INSURANCE // страховка и регистрация
+  PURCHASE // покупка техники и оборудования
+  SALARY // зарплаты
+  RENT // аренда точки
+  MARKETING // реклама
+  OTHER
+}
+
+// ---------- Пользователи и документы ----------
+
+model User {
+  id                 String             @id @default(cuid())
+  telegramId         String             @unique @map("telegram_id")
+  firstName          String?            @map("first_name")
+  lastName           String?            @map("last_name")
+  username           String?
+  photoUrl           String?            @map("photo_url")
+  phone              String? // E.164
+  lang               Lang               @default(en)
+  currency           Currency           @default(USD)
+  role               Role               @default(CLIENT)
+  verificationStatus VerificationStatus @default(NONE) @map("verification_status")
+  licenseCategory    LicenseCategory?   @map("license_category")
+  lastPaymentMethod  PaymentMethod?     @map("last_payment_method")
+  onboardedAt        DateTime?          @map("onboarded_at") @db.Timestamptz(3)
+  /// Сам выбрал язык: экран выбора больше не показывается
+  langChosenAt       DateTime?          @map("lang_chosen_at") @db.Timestamptz(3)
+  pdConsentAt        DateTime?          @map("pd_consent_at") @db.Timestamptz(3) // согласие на обработку ПД
+  licenseWarningAt   DateTime?          @map("license_warning_at") @db.Timestamptz(3) // подтвердил предупреждение о правах
+  /// Сессии админки, выданные раньше этого момента, недействительны (выход)
+  adminSessionsAfter DateTime?          @map("admin_sessions_after") @db.Timestamptz(3)
+  /// Точка, к которой привязан менеджер
+  locationId         String?            @map("location_id")
+  isDemo             Boolean            @default(false) @map("is_demo")
+  createdAt          DateTime           @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt          DateTime           @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  location          Location?             @relation("LocationManagers", fields: [locationId], references: [id], onDelete: SetNull)
+  ownedLocations    Location[]            @relation("LocationOwner")
+  documents         Document[]            @relation("DocumentOwner")
+  verifiedDocuments Document[]            @relation("DocumentVerifier")
+  bookings          Booking[]
+  favorites         Favorite[]
+  handoverActs      HandoverAct[]
+  deductions        DepositDeduction[]
+  statusChanges     BookingStatusChange[]
+  auditLogs         AuditLog[]
+  analyticsEvents   AnalyticsEvent[]
+  expenses          Expense[]
+
+  @@map("users")
+}
+
+model Document {
+  id              String           @id @default(cuid())
+  userId          String           @map("user_id")
+  type            DocumentType
+  fileKey         String           @map("file_key") // ключ в приватном бакете
+  contentType     String?          @map("content_type")
+  licenseCategory LicenseCategory? @map("license_category")
+  expiresAt       DateTime?        @map("expires_at") @db.Timestamptz(3)
+  status          DocumentStatus   @default(UPLOADED)
+  rejectReason    String?          @map("reject_reason")
+  verifiedById    String?          @map("verified_by")
+  verifiedAt      DateTime?        @map("verified_at") @db.Timestamptz(3)
+  createdAt       DateTime         @default(now()) @map("created_at") @db.Timestamptz(3)
+  deletedAt       DateTime?        @map("deleted_at") @db.Timestamptz(3)
+
+  user       User  @relation("DocumentOwner", fields: [userId], references: [id], onDelete: Cascade)
+  verifiedBy User? @relation("DocumentVerifier", fields: [verifiedById], references: [id], onDelete: SetNull)
+
+  @@index([userId])
+  @@map("documents")
+}
+
+// ---------- Точки и парк ----------
+
+model Location {
+  id        String   @id @default(cuid())
+  /// I18nText
+  name      Json
+  address   String
+  lat       Float
+  lng       Float
+  openTime  String   @default("08:00") @map("open_time") // HH:mm в tz точки
+  closeTime String   @default("20:00") @map("close_time")
+  timezone  String   @default("Asia/Ho_Chi_Minh")
+  /// Арендодатель (задел под маркетплейс)
+  ownerId   String?  @map("owner_id")
+  /// Контакт точки для клиента; пусто — общий managerContact из настроек
+  contact   String?
+  /// Арендодатель в договоре: имя или компания, реквизиты
+  legalName String?  @map("legal_name")
+  /// Свой счёт payOS. Ключ API и ключ подписи зашифрованы (payments/secret-box.ts)
+  payosClientId    String?   @map("payos_client_id")
+  payosApiKey      String?   @map("payos_api_key")
+  payosChecksumKey String?   @map("payos_checksum_key")
+  /// Когда payOS принял адрес webhook этой точки
+  payosWebhookAt   DateTime? @map("payos_webhook_at") @db.Timestamptz(3)
+  isActive  Boolean  @default(true) @map("is_active")
+  isDemo    Boolean  @default(false) @map("is_demo")
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  owner    User?        @relation("LocationOwner", fields: [ownerId], references: [id], onDelete: SetNull)
+  managers User[]       @relation("LocationManagers")
+  models   BikeModel[]
+  bikes    Bike[]
+  bookings Booking[]
+  seasons  SeasonRule[]
+  expenses Expense[]
+  incidents BookingIncident[]
+
+  @@map("locations")
+}
+
+model Brand {
+  id        String   @id @default(cuid())
+  name      String   @unique
+  logoKey   String?  @map("logo_key") // ключ в публичном бакете; без логотипа — название в плитке
+  sortOrder Int      @default(0) @map("sort_order")
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+
+  models BikeModel[]
+
+  @@map("brands")
+}
+
+model BikeModel {
+  id              String          @id @default(cuid())
+  locationId      String          @map("location_id")
+  brandId         String          @map("brand_id")
+  name            String // «Air Blade 125»
+  slug            String          @unique
+  category        ModelCategory
+  transmission    Transmission
+  engineCc        Int?            @map("engine_cc") // null у электро
+  year            Int?
+  /// I18nText
+  description     Json
+  /// Фото: [{ key, alt?: I18nText, sizes: { 400: { webp, avif }, ... } }]
+  photos          Json            @default("[]")
+  fuelConsumption Float?          @map("fuel_consumption") // л/100 км
+  tankLiters      Float?          @map("tank_liters")
+  maxSpeedKmh     Int?            @map("max_speed_kmh")
+  seats           Int             @default(2)
+  /// Опции байка: TRUNK, USB, ABS, SMART_KEY
+  features        String[]        @default([])
+  /// Что входит бесплатно: I18nText[]
+  included        Json            @default("[]")
+  /// Условия (депозит, документы, ограничения): I18nText
+  conditions      Json?
+  /// Требуемая категория прав: A при ≥ 150 см³
+  licenseRequired LicenseCategory @default(A1) @map("license_required")
+  deposit         Int // VND
+  rating          Float?
+  reviewsCount    Int             @default(0) @map("reviews_count")
+  popularity      Int             @default(0)
+  isActive        Boolean         @default(true) @map("is_active")
+  isDemo          Boolean         @default(false) @map("is_demo")
+  createdAt       DateTime        @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt       DateTime        @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  location  Location   @relation(fields: [locationId], references: [id])
+  brand     Brand      @relation(fields: [brandId], references: [id])
+  bikes     Bike[]
+  tariffs   Tariff[]
+  bookings  Booking[]
+  favorites Favorite[]
+
+  @@index([locationId, isActive])
+  @@index([category])
+  @@map("bike_models")
+}
+
+model Bike {
+  id                 String     @id @default(cuid())
+  modelId            String     @map("model_id")
+  locationId         String     @map("location_id")
+  plate              String     @unique // госномер
+  vin                String?    @unique
+  mileageKm          Int        @default(0) @map("mileage_km")
+  status             BikeStatus @default(ACTIVE)
+  /// Дата готовности после ремонта
+  readyAt            DateTime?  @map("ready_at") @db.Timestamptz(3)
+  serviceDate        DateTime?  @map("service_date") @db.Timestamptz(3) // дата ТО
+  insuranceUntil     DateTime?  @map("insurance_until") @db.Timestamptz(3)
+  registrationDocKey String?    @map("registration_doc_key")
+  insuranceDocKey    String?    @map("insurance_doc_key")
+  /// Цена покупки, VND — для окупаемости
+  purchasePrice      Int?       @map("purchase_price")
+  /// ID устройства в Traccar (обычно IMEI) — приём точек через GPS_FORWARD_SECRET
+  trackerDeviceId    String?    @unique @map("tracker_device_id")
+  /// Секрет из адреса приёма точек; null — GPS не подключён
+  trackerToken       String?    @unique @map("tracker_token")
+  lastLat            Float?     @map("last_lat")
+  lastLng            Float?     @map("last_lng")
+  lastSpeedKmh       Float?     @map("last_speed_kmh")
+  lastBatteryPct     Int?       @map("last_battery_pct")
+  lastSeenAt         DateTime?  @map("last_seen_at") @db.Timestamptz(3)
+  /// Когда последний раз предупредили о движении без аренды
+  motionAlertAt      DateTime?  @map("motion_alert_at") @db.Timestamptz(3)
+  isDemo             Boolean    @default(false) @map("is_demo")
+  createdAt          DateTime   @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt          DateTime   @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  model        BikeModel      @relation(fields: [modelId], references: [id])
+  location     Location       @relation(fields: [locationId], references: [id])
+  proposedIn   BookingIncident[]
+  bookings     Booking[]
+  handoverActs HandoverAct[]
+  expenses     Expense[]
+  positions    BikePosition[]
+
+  @@index([modelId, status])
+  @@map("bikes")
+}
+
+/// Точка трека GPS; старше 30 дней удаляется
+model BikePosition {
+  id         String   @id @default(cuid())
+  bikeId     String   @map("bike_id")
+  lat        Float
+  lng        Float
+  speedKmh   Float?   @map("speed_kmh")
+  recordedAt DateTime @map("recorded_at") @db.Timestamptz(3)
+
+  bike Bike @relation(fields: [bikeId], references: [id], onDelete: Cascade)
+
+  @@index([bikeId, recordedAt])
+  @@index([recordedAt])
+  @@map("bike_positions")
+}
+
+/// Расход бизнеса; bikeId — если относится к конкретному байку
+model Expense {
+  id          String          @id @default(cuid())
+  locationId  String?         @map("location_id")
+  bikeId      String?         @map("bike_id")
+  category    ExpenseCategory
+  amount      Int // VND
+  date        DateTime        @db.Date // дата в tz точки
+  comment     String?
+  createdById String          @map("created_by")
+  createdAt   DateTime        @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt   DateTime        @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  location  Location? @relation(fields: [locationId], references: [id], onDelete: SetNull)
+  bike      Bike?     @relation(fields: [bikeId], references: [id], onDelete: SetNull)
+  createdBy User      @relation(fields: [createdById], references: [id])
+
+  @@index([date])
+  @@index([bikeId, date])
+  @@map("expenses")
+}
+
+// ---------- Цены ----------
+
+model Tariff {
+  id          String   @id @default(cuid())
+  modelId     String   @map("model_id")
+  minDays     Int      @map("min_days")
+  maxDays     Int?     @map("max_days") // null = без верхней границы
+  pricePerDay Int      @map("price_per_day") // VND
+  isDemo      Boolean  @default(false) @map("is_demo")
+  createdAt   DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt   DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  model BikeModel @relation(fields: [modelId], references: [id], onDelete: Cascade)
+
+  @@unique([modelId, minDays])
+  @@map("tariffs")
+}
+
+model SeasonRule {
+  id          String   @id @default(cuid())
+  /// null — для всех точек
+  locationId  String?  @map("location_id")
+  /// I18nText
+  name        Json
+  from        DateTime @db.Date // дата в tz точки, включительно
+  to          DateTime @db.Date // включительно
+  coefficient Float
+  isDemo      Boolean  @default(false) @map("is_demo")
+  createdAt   DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+
+  location Location? @relation(fields: [locationId], references: [id], onDelete: Cascade)
+
+  @@index([from, to])
+  @@map("season_rules")
+}
+
+model Extra {
+  id        String   @id @default(cuid())
+  code      String   @unique // HELMET_2, RAINCOAT, PHONE_HOLDER, INSURANCE
+  /// I18nText
+  name      Json
+  price     Int // VND
+  per       ExtraPer
+  maxQty    Int      @default(1) @map("max_qty")
+  sortOrder Int      @default(0) @map("sort_order")
+  isActive  Boolean  @default(true) @map("is_active")
+  isDemo    Boolean  @default(false) @map("is_demo")
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  bookingExtras BookingExtra[]
+
+  @@map("extras")
+}
+
+model PromoCode {
+  id        String    @id @default(cuid())
+  code      String    @unique
+  type      PromoType
+  value     Int // процент или VND
+  validFrom DateTime? @map("valid_from") @db.Timestamptz(3)
+  validTo   DateTime? @map("valid_to") @db.Timestamptz(3)
+  limit     Int?
+  used      Int       @default(0)
+  createdAt DateTime  @default(now()) @map("created_at") @db.Timestamptz(3)
+
+  bookings Booking[]
+
+  @@map("promo_codes")
+}
+
+// ---------- Брони и платежи ----------
+
+model Booking {
+  id              String         @id @default(cuid())
+  /// Порядковый номер для кода BK-XXXXX (shared.bookingCode)
+  seq             Int            @unique @default(autoincrement())
+  code            String         @unique
+  userId          String         @map("user_id")
+  modelId         String         @map("model_id")
+  /// Зарезервированный байк: назначается при создании (защита от двойной брони), менеджер может переназначить при выдаче
+  bikeId          String         @map("bike_id")
+  locationId      String         @map("location_id")
+  startAt         DateTime       @map("start_at") @db.Timestamptz(3)
+  endAt           DateTime       @map("end_at") @db.Timestamptz(3)
+  /// Буфер на осмотр и мойку после брони (Setting bufferMinutes на момент создания)
+  bufferMinutes   Int            @default(60) @map("buffer_minutes")
+  /// end_at + buffer_minutes — заполняется триггером; участвует в exclusion constraint
+  blockedUntil    DateTime?      @map("blocked_until") @db.Timestamptz(3)
+  actualStartAt   DateTime?      @map("actual_start_at") @db.Timestamptz(3)
+  actualEndAt     DateTime?      @map("actual_end_at") @db.Timestamptz(3)
+  status          BookingStatus  @default(PENDING_PAYMENT)
+  cancelReason    CancelReason?  @map("cancel_reason")
+  cancelledAt     DateTime?      @map("cancelled_at") @db.Timestamptz(3)
+  holdExpiresAt   DateTime?      @map("hold_expires_at") @db.Timestamptz(3)
+  paymentMethod   PaymentMethod  @map("payment_method")
+  deliveryMethod  DeliveryMethod @default(PICKUP) @map("delivery_method")
+  deliveryAddress String?        @map("delivery_address")
+  deliveryLat     Float?         @map("delivery_lat")
+  deliveryLng     Float?         @map("delivery_lng")
+  phone           String?
+  lang            Lang
+  agreedAt        DateTime?      @map("agreed_at") @db.Timestamptz(3)
+  /// Клиент подтвердил договор аренды в приложении (ТЗ §11.1)
+  contractAcceptedAt DateTime?   @map("contract_accepted_at") @db.Timestamptz(3)
+  promoCodeId     String?        @map("promo_code_id")
+  rentAmount      Int            @map("rent_amount")
+  extrasAmount    Int            @default(0) @map("extras_amount")
+  deliveryAmount  Int            @default(0) @map("delivery_amount")
+  discountAmount  Int            @default(0) @map("discount_amount")
+  depositAmount   Int            @default(0) @map("deposit_amount")
+  totalAmount     Int            @map("total_amount") // аренда + опции + доставка − скидка
+  lateFeeAmount   Int            @default(0) @map("late_fee_amount")
+  refundAmount    Int?           @map("refund_amount")
+  /// Снимок расчёта shared.quote (строки детализации)
+  quote           Json
+  /// Источник (deeplink, реклама) для воронки
+  source          String?
+  createdAt       DateTime       @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt       DateTime       @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  user          User                  @relation(fields: [userId], references: [id])
+  model         BikeModel             @relation(fields: [modelId], references: [id])
+  bike          Bike                  @relation(fields: [bikeId], references: [id])
+  location      Location              @relation(fields: [locationId], references: [id])
+  incidents     BookingIncident[]
+  promoCode     PromoCode?            @relation(fields: [promoCodeId], references: [id], onDelete: SetNull)
+  extras        BookingExtra[]
+  payments      Payment[]
+  handoverActs  HandoverAct[]
+  deductions    DepositDeduction[]
+  statusChanges BookingStatusChange[]
+  review        Review?
+
+  @@index([userId, status])
+  @@index([modelId, status, startAt])
+  @@index([bikeId, startAt])
+  @@index([status, holdExpiresAt])
+  @@map("bookings")
+}
+
+model BookingExtra {
+  id        String   @id @default(cuid())
+  bookingId String   @map("booking_id")
+  extraId   String   @map("extra_id")
+  qty       Int
+  unitPrice Int      @map("unit_price")
+  per       ExtraPer
+  amount    Int
+
+  booking Booking @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+  extra   Extra   @relation(fields: [extraId], references: [id])
+
+  @@unique([bookingId, extraId])
+  @@map("booking_extras")
+}
+
+model BookingStatusChange {
+  id        String         @id @default(cuid())
+  bookingId String         @map("booking_id")
+  from      BookingStatus?
+  to        BookingStatus
+  actorId   String?        @map("actor_id") // null — система
+  reason    String?
+  createdAt DateTime       @default(now()) @map("created_at") @db.Timestamptz(3)
+
+  booking Booking @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+  actor   User?   @relation(fields: [actorId], references: [id], onDelete: SetNull)
+
+  @@index([bookingId, createdAt])
+  @@map("booking_status_changes")
+}
+
+model Payment {
+  id             String        @id @default(cuid())
+  bookingId      String        @map("booking_id")
+  kind           PaymentKind
+  method         PaymentMethod
+  provider       String? // payos | test | null для наличных
+  amount         Int // ожидаемая сумма, VND
+  receivedAmount Int?          @map("received_amount") // фактически пришло (сверка)
+  currency       Currency      @default(VND)
+  status         PaymentStatus @default(PENDING)
+  /// Внешний ID у провайдера — идемпотентность webhook
+  externalId     String?       @unique @map("external_id")
+  qrPayload      String?       @map("qr_payload")
+  /// Перевод в рублях: сумма и курс на момент выставления (amount остаётся в VND)
+  rubAmount      Int?          @map("rub_amount")
+  rubRate        Float?        @map("rub_rate")
+  /// Клиент нажал «Я перевёл»; пусто, пока он не сообщил о переводе или администратор не нашёл денег
+  claimedAt      DateTime?     @map("claimed_at") @db.Timestamptz(3)
+  expiresAt      DateTime?     @map("expires_at") @db.Timestamptz(3)
+  paidAt         DateTime?     @map("paid_at") @db.Timestamptz(3)
+  /// Сырые данные webhook
+  raw            Json?
+  comment        String?
+  createdById    String?       @map("created_by")
+  createdAt      DateTime      @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt      DateTime      @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  booking Booking @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+
+  @@index([bookingId])
+  @@index([status, createdAt])
+  @@index([claimedAt])
+  @@map("payments")
+}
+
+/// Байка нет на месте: случай по брони и как он решён
+model BookingIncident {
+  id               String              @id @default(cuid())
+  bookingId        String              @map("booking_id")
+  locationId       String              @map("location_id")
+  source           IncidentSource
+  status           IncidentStatus      @default(OPEN)
+  resolution       IncidentResolution?
+  comment          String?
+  /// Клиент сообщил сам: отсчёт ожидания ответа точки
+  clientReportedAt DateTime?           @map("client_reported_at") @db.Timestamptz(3)
+  proposedBikeId   String?             @map("proposed_bike_id")
+  proposedRent     Int?                @map("proposed_rent")
+  proposedAt       DateTime?           @map("proposed_at") @db.Timestamptz(3)
+  /// Клиент сообщил снова после ответа «байк на месте»: решает администратор, сама отмена закрыта
+  disputed         Boolean             @default(false)
+  /// Точка не ответила вовремя, администратор предупреждён
+  escalatedAt      DateTime?           @map("escalated_at") @db.Timestamptz(3)
+  resolvedAt       DateTime?           @map("resolved_at") @db.Timestamptz(3)
+  createdAt        DateTime            @default(now()) @map("created_at") @db.Timestamptz(3)
+
+  booking      Booking  @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+  location     Location @relation(fields: [locationId], references: [id])
+  proposedBike Bike?    @relation(fields: [proposedBikeId], references: [id], onDelete: SetNull)
+
+  @@index([locationId, status])
+  @@index([bookingId])
+  @@map("booking_incidents")
+}
+
+model HandoverAct {
+  id                String       @id @default(cuid())
+  bookingId         String       @map("booking_id")
+  bikeId            String       @map("bike_id")
+  kind              HandoverKind
+  mileageKm         Int          @map("mileage_km")
+  fuelLevel         Int          @map("fuel_level") // 0–100 %
+  /// Ключи фото в приватном бакете (4–8)
+  photos            String[]     @default([])
+  damages           String?
+  managerId         String       @map("manager_id")
+  clientConfirmedAt DateTime?    @map("client_confirmed_at") @db.Timestamptz(3) // подпись клиента — подтверждение в приложении
+  createdAt         DateTime     @default(now()) @map("created_at") @db.Timestamptz(3)
+
+  booking    Booking            @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+  bike       Bike               @relation(fields: [bikeId], references: [id])
+  manager    User               @relation(fields: [managerId], references: [id])
+  deductions DepositDeduction[]
+
+  @@unique([bookingId, kind])
+  @@map("handover_acts")
+}
+
+model DepositDeduction {
+  id          String   @id @default(cuid())
+  bookingId   String   @map("booking_id")
+  actId       String?  @map("act_id")
+  amount      Int // VND
+  reason      String
+  photos      String[] @default([])
+  createdById String   @map("created_by")
+  createdAt   DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+
+  booking   Booking      @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+  act       HandoverAct? @relation(fields: [actId], references: [id], onDelete: SetNull)
+  createdBy User         @relation(fields: [createdById], references: [id])
+
+  @@index([bookingId])
+  @@map("deposit_deductions")
+}
+
+model Review {
+  id        String   @id @default(cuid())
+  bookingId String   @unique @map("booking_id")
+  rating    Int // 1–5
+  text      String?
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+
+  booking Booking @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+
+  @@map("reviews")
+}
+
+model Favorite {
+  userId    String   @map("user_id")
+  modelId   String   @map("model_id")
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+
+  user  User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  model BikeModel @relation(fields: [modelId], references: [id], onDelete: Cascade)
+
+  @@id([userId, modelId])
+  @@map("favorites")
+}
+
+// ---------- Контент, настройки, служебное ----------
+
+model Banner {
+  id        String   @id @default(cuid())
+  /// I18nText
+  title     Json
+  /// I18nText
+  text      Json?
+  imageKey  String?  @map("image_key")
+  link      String?
+  isActive  Boolean  @default(true) @map("is_active")
+  isDemo    Boolean  @default(false) @map("is_demo")
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  @@map("banners")
+}
+
+/// Конфигурируемые правила: ключ → JSON (holdMinutes, bufferMinutes, cancel, late, rates, …)
+model Setting {
+  key       String   @id
+  value     Json
+  /// Значение — заглушка или демо, требует замены владельцем
+  isDemo    Boolean  @default(false) @map("is_demo")
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  @@map("settings")
+}
+
+/// Правки текстов интерфейса из админки поверх JSON-файлов packages/i18n
+model I18nOverride {
+  id        String   @id @default(cuid())
+  lang      Lang
+  key       String
+  value     String
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  @@unique([lang, key])
+  @@map("i18n_overrides")
+}
+
+model AuditLog {
+  id        String   @id @default(cuid())
+  actorId   String?  @map("actor_id")
+  action    String
+  entity    String
+  entityId  String?  @map("entity_id")
+  diff      Json?
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+
+  actor User? @relation(fields: [actorId], references: [id], onDelete: SetNull)
+
+  @@index([entity, entityId])
+  @@index([createdAt])
+  @@map("audit_logs")
+}
+
+model AnalyticsEvent {
+  id        String   @id @default(cuid())
+  userId    String?  @map("user_id")
+  name      String // open, dates_selected, model_viewed, checkout_opened, paid
+  props     Json?
+  source    String?
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+
+  user User? @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@index([name, createdAt])
+  @@map("analytics_events")
+}

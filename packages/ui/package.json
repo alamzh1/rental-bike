@@ -1,0 +1,37 @@
+{
+  "name": "@rental/ui",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Tailwind-пресет из design-system/tokens.json и общие React-компоненты (таск 02).",
+  "exports": {
+    ".": "./src/index.ts",
+    "./preset": "./tailwind-preset.js",
+    "./styles.css": "./src/styles.css"
+  },
+  "files": ["src", "tailwind-preset.js"],
+  "scripts": {
+    "gen": "node scripts/gen-tokens.mjs",
+    "typecheck": "node scripts/gen-tokens.mjs && tsc -p tsconfig.json --noEmit",
+    "test": "node scripts/gen-tokens.mjs && vitest run"
+  },
+  "dependencies": {
+    "@rental/i18n": "workspace:*",
+    "@rental/shared": "workspace:*",
+    "lucide-react": "^0.577.0"
+  },
+  "peerDependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwindcss": "^3.4.19"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwindcss": "^3.4.19",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.7"
+  }
+}

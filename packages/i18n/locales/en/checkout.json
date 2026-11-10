@@ -1,0 +1,92 @@
+{
+  "title": "Checkout",
+  "changeDates": "Change",
+  "days": "{days, plural, one {# rental day} other {# rental days}}",
+  "noDates": {
+    "title": "Pick your dates first",
+    "text": "Without dates we can’t calculate the price or find a free bike.",
+    "action": "Pick dates"
+  },
+  "error": {
+    "title": "Couldn’t open checkout"
+  },
+  "handover": {
+    "title": "Pick-up",
+    "pickup": "Pick up",
+    "delivery": "Hotel delivery",
+    "address": "Delivery address",
+    "addressPlaceholder": "Hotel, street, number",
+    "fee": "Delivery: {fee}",
+    "map": "Delivery map",
+    "mapHint": "Tap the map or drag the pin to mark the spot."
+  },
+  "extras": {
+    "title": "Extras",
+    "perDay": "per day",
+    "once": "one-off",
+    "less": "Fewer: {name}",
+    "more": "More: {name}"
+  },
+  "contact": {
+    "title": "Contact",
+    "phone": "Phone",
+    "hint": "The manager will call or message you if anything changes.",
+    "share": "Use my Telegram number",
+    "invalid": "Check the number: use the format +84 912 345 678",
+    "required": "Enter a phone number so we can reach you",
+    "sentNoPhone": "Contact sent to the bot. Enter the number here too so it’s attached to the booking."
+  },
+  "docs": {
+    "title": "Documents and licence",
+    "category": "Licence category",
+    "license": {
+      "A1": "A1",
+      "A": "A",
+      "NONE": "No licence (up to 50 cc)"
+    },
+    "warning": "Vietnam requires a category A1 licence (bikes up to 125 cc) or category A (from 150 cc). An International Driving Permit (IDP) is accepted only under the 1968 Vienna Convention; an IDP under the 1949 Geneva Convention is not accepted. The 2026 fine for riding without a valid licence is 2–4 million ₫. The manager checks the originals at pick-up.",
+    "lead": "Your passport and licence photos come first: you can't book without them."
+  },
+  "method": {
+    "title": "Payment method",
+    "vietqr": "VietQR",
+    "cash": "Cash on pick-up",
+    "vietqrNote": "Pay by QR in your banking app. The status updates by itself.",
+    "cashNote": "The booking is confirmed right away; you pay the manager at pick-up.",
+    "cashPrepayNote": "Pay {percent}% now, the rest to the manager at pickup.",
+    "rub": "Rubles, SBP",
+    "rubNote": "Pay the rent in rubles by phone number from your bank's app. The deposit is paid in cash at pick-up. We confirm the booking as soon as we see the money."
+  },
+  "breakdown": {
+    "title": "Total",
+    "rent": "Rental, {days, plural, one {# day} other {# days}}",
+    "extras": "Extras",
+    "delivery": "Delivery",
+    "total": "Rental total",
+    "deposit": "Deposit",
+    "depositNote": "The deposit isn’t part of the price and is returned when the bike comes back undamaged.",
+    "payNow": "To pay now",
+    "payAtPickup": "Pay at pick-up",
+    "depositCashNote": "The deposit is paid to the manager in cash at pick-up and returned the same way when the bike comes back undamaged."
+  },
+  "consent": {
+    "text": "I agree to the",
+    "rules": "rental rules"
+  },
+  "blocked": {
+    "license": "Without a licence only bikes up to 50 cc are available",
+    "documents": "Upload photos of your documents: you can't book without them. Show me",
+    "consent": "Tick the agreement to the rules to continue",
+    "phone": "Enter a phone number like +84 912 345 678",
+    "address": "Enter the delivery address"
+  },
+  "cta": {
+    "pay": "Pay {amount}",
+    "book": "Book"
+  },
+  "taken": {
+    "text": "The bike was taken while you were checking out. Pick another bike for these dates or change the dates.",
+    "other": "Other bikes for these dates",
+    "dates": "Change dates"
+  }
+}

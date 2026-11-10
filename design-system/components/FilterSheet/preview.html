@@ -1,0 +1,42 @@
+<!-- @dsCard group="Ввод" height=520 width=390 -->
+<!doctype html>
+<html lang="ru">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>FilterSheet</title></head>
+<body class="br-app">
+<div class="br-scrim">
+  <div class="br-sheet" role="dialog" aria-label="Фильтры">
+    <span class="br-sheet__grab"></span>
+    <div class="br-sheet__head"><span class="title-2">Фильтры</span><button class="br-btn br-btn--ghost" type="button">Сбросить</button></div>
+    <div class="br-sheet__sec">
+      <span class="body-strong">Тип</span>
+      <div class="br-chips">
+        <button class="br-chip br-chip--option" type="button" aria-pressed="true">Автомат</button>
+        <button class="br-chip br-chip--option" type="button" aria-pressed="false">Полуавтомат</button>
+        <button class="br-chip br-chip--option" type="button" aria-pressed="false">Механика</button>
+        <button class="br-chip br-chip--option" type="button" aria-pressed="false">Электро</button>
+      </div>
+    </div>
+    <div class="br-sheet__sec">
+      <span class="body-strong">Объём двигателя</span>
+      <div class="br-chips">
+        <button class="br-chip br-chip--option" type="button" aria-pressed="false">50</button>
+        <button class="br-chip br-chip--option" type="button" aria-pressed="true">110–125</button>
+        <button class="br-chip br-chip--option" type="button" aria-pressed="true">150–160</button>
+        <button class="br-chip br-chip--option" type="button" aria-pressed="false">300+ см³</button>
+      </div>
+    </div>
+    <div class="br-sheet__sec">
+      <span class="body-strong">Цена в день</span>
+      <div class="br-slider" aria-hidden="true">
+        <span class="br-slider__track"></span>
+        <span class="br-slider__fill" style="left:10%;right:35%"></span>
+        <span class="br-slider__thumb" style="left:10%"></span>
+        <span class="br-slider__thumb" style="left:65%"></span>
+      </div>
+      <div class="br-slider__vals"><span>120 000 ₫</span><span>300 000 ₫</span></div>
+    </div>
+    <button class="br-btn br-btn--primary br-btn--lg br-btn--block" type="button">Показать 12 байков</button>
+  </div>
+</div>
+</body>
+</html>

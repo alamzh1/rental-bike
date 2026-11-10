@@ -1,0 +1,197 @@
+{
+  "title": "Manager mode",
+  "tab": {
+    "label": "Sections",
+    "today": "Today",
+    "bikes": "Fleet"
+  },
+  "scan": {
+    "button": "Scan QR",
+    "prompt": "Point the camera at the booking QR",
+    "failed": "Could not open the camera. Enter the booking code."
+  },
+  "code": {
+    "label": "Booking code",
+    "placeholder": "BK-24117",
+    "submit": "Find booking",
+    "hint": "The code from the client's screen or the QR"
+  },
+  "today": {
+    "issues": "Handovers",
+    "returns": "Returns",
+    "emptyIssues": "No handovers today",
+    "emptyReturns": "No returns today",
+    "emptyHint": "New bookings appear here on their own. You can also find one by QR.",
+    "overdue": "Overdue",
+    "cashDue": "Cash due: {amount}",
+    "issueAt": "Handover {time}",
+    "returnAt": "Return {time}",
+    "reload": "Refresh",
+    "incident": "Bike missing"
+  },
+  "status": {
+    "PENDING_PAYMENT": "Awaiting payment",
+    "CONFIRMED": "Confirmed",
+    "ISSUED": "Issued",
+    "COMPLETED": "Completed",
+    "CANCELLED_BY_CLIENT": "Cancelled by client",
+    "CANCELLED_BY_SYSTEM": "Cancelled by system",
+    "PROBLEM": "Problem"
+  },
+  "booking": {
+    "client": "Client",
+    "phone": "Phone",
+    "call": "Call",
+    "period": "Period",
+    "bike": "Bike",
+    "noName": "No name",
+    "notFound": "Booking not found",
+    "wrongLocation": "This booking belongs to another location",
+    "back": "Back to list",
+    "retry": "Retry"
+  },
+  "docs": {
+    "title": "Client documents",
+    "empty": "The client has not uploaded documents yet. Check the originals.",
+    "view": "Open",
+    "verifiedAt": "Verified {date}",
+    "type": {
+      "PASSPORT": "Passport",
+      "LICENSE": "Licence",
+      "IDP": "International permit"
+    },
+    "state": {
+      "UPLOADED": "Not checked",
+      "VERIFIED": "Verified",
+      "REJECTED": "Rejected"
+    },
+    "hint": "An administrator checks documents in the admin panel. You can see the result here; compare the originals with the copies at handover."
+  },
+  "handover": {
+    "title": "Bike handover",
+    "bike": "Bike",
+    "bikeHint": "Free bikes of this model",
+    "mileage": "Mileage, km",
+    "fuel": "Fuel",
+    "photos": "Bike photos",
+    "photosHint": "{min} to {max} photos from all sides",
+    "damages": "Damage before handover",
+    "damagesHint": "Scratches, chips, anything already there",
+    "submit": "Create handover act",
+    "sent": "Act sent to the client",
+    "waiting": "Waiting for the client to confirm the act in their app",
+    "confirmed": "The client confirmed the act. Bike handed over.",
+    "refresh": "Check confirmation",
+    "notReady": "Needed: bike, mileage and photos ({count}/{min})"
+  },
+  "return": {
+    "title": "Bike return",
+    "submit": "Accept and close booking",
+    "mileage": "Mileage at return, km",
+    "fuel": "Fuel",
+    "photos": "Return photos",
+    "damages": "Damage",
+    "damagesHint": "What appeared during the rental",
+    "late": "Late return",
+    "lateNone": "On time, no surcharge",
+    "lateFee": "Late surcharge for {minutes, plural, one {# minute} other {# minutes}}: {amount}",
+    "deductions": "Deposit deductions",
+    "addDeduction": "Add deduction",
+    "removeDeduction": "Remove deduction",
+    "amount": "Amount, ₫",
+    "reason": "Reason",
+    "deductionPhotos": "Damage photos",
+    "exceeds": "Deductions exceed the deposit ({amount})",
+    "done": "Booking closed",
+    "mileageLower": "Mileage is lower than at handover ({value} km)",
+    "refundLabel": "Deposit to refund",
+    "surchargeLabel": "Surcharge to collect"
+  },
+  "cash": {
+    "title": "Cash payment",
+    "amount": "Amount, ₫",
+    "kind": "For",
+    "kinds": {
+      "RENT": "Rental",
+      "DEPOSIT": "Deposit",
+      "PREPAYMENT": "Prepayment",
+      "SURCHARGE": "Surcharge"
+    },
+    "submit": "Accept cash",
+    "done": "Received: {amount}",
+    "all": "Full amount"
+  },
+  "noShow": {
+    "button": "No-show",
+    "title": "Client did not come?",
+    "text": "The booking will be cancelled; the refund follows the cancellation rules.",
+    "confirm": "Mark no-show",
+    "cancel": "Cancel",
+    "done": "Booking cancelled: no-show"
+  },
+  "bikes": {
+    "title": "Location fleet",
+    "empty": "No bikes in the fleet",
+    "mileage": "{value} km",
+    "status": {
+      "ACTIVE": "Ready",
+      "REPAIR": "In repair"
+    },
+    "toRepair": "Send to repair",
+    "toActive": "Back in service",
+    "readyAt": "Ready by",
+    "readyUntil": "Repair until {date}",
+    "readyNone": "no date",
+    "sheetTitle": "Bike {plate} to repair",
+    "sheetHint": "Until this date the bike will not be available for booking.",
+    "save": "Save",
+    "close": "Close"
+  },
+  "photo": {
+    "add": "Add photo",
+    "remove": "Remove photo",
+    "uploading": "Uploading",
+    "failed": "Upload failed",
+    "retry": "Retry",
+    "count": "{count} of {max}"
+  },
+  "error": {
+    "PHOTOS_COUNT": "4 to 8 photos are required",
+    "WRONG_LOCATION": "This booking belongs to another location",
+    "BIKE_NOT_AVAILABLE": "The bike is busy, in repair or of another model",
+    "ACT_EXISTS": "The act already exists",
+    "DEDUCTION_TOO_LARGE": "Deductions exceed the deposit held",
+    "MILEAGE_LOWER": "Mileage is lower than at handover",
+    "CASH_EXCEEDS_DUE": "The amount exceeds what is due. This cash may already be recorded. Refresh the booking.",
+    "BIKE_HAS_ACTIVE_BOOKING": "This bike has an active booking. Finish it or move it to another bike first.",
+    "PHOTO_NOT_UPLOADED": "Some photos did not upload. Upload them again."
+  },
+  "sum": {
+    "total": "Rental",
+    "deposit": "Deposit",
+    "paid": "Paid",
+    "cashDue": "Cash to collect",
+    "deducted": "Deducted"
+  },
+  "incident": {
+    "report": "This bike is not here",
+    "title": "Bike not at the location",
+    "source": {
+      "CLIENT": "The customer reported they could not find the bike.",
+      "STAFF": "Staff reported the bike is missing.",
+      "SYSTEM": "The previous customer has not returned this bike and no identical one is free."
+    },
+    "sameModel": "Free bikes of this model: {count}. Choose a plate in the handover form below; the customer loses nothing.",
+    "noSameModel": "No free bikes of this model.",
+    "proposed": "Offered to the customer: {model}, plate {plate}. Waiting for their answer in the app.",
+    "replacement": "Another model as a replacement",
+    "choose": "Choose a bike",
+    "refund": "refund {amount}",
+    "terms": "Costs more: the customer pays nothing extra. Costs less: the difference goes to refund.",
+    "propose": "Offer to the customer",
+    "noReplacement": "No free bikes at this location to replace it.",
+    "present": "The bike is here",
+    "cancel": "Cancel with a full refund",
+    "cancelConfirm": "Cancel and return the full amount? You will need to transfer the money manually."
+  }
+}

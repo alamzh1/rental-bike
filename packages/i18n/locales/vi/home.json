@@ -1,0 +1,37 @@
+{
+  "greeting": "Xin chào, {name}!",
+  "greetingAnon": "Xin chào!",
+  "pickup": "Nhận xe: {name}, {address}",
+  "search": {
+    "label": "Tìm xe",
+    "placeholder": "Tìm theo mẫu xe hoặc hãng"
+  },
+  "filters": "Bộ lọc",
+  "now": {
+    "title": "Cần xe ngay",
+    "text": "Hiển thị các xe có thể nhận trong vòng một giờ tới, thuê một ngày.",
+    "action": "Tìm xe",
+    "error": "Không tìm được xe. Hãy thử lại.",
+    "listTitle": "Còn trống trong 2 giờ tới",
+    "listText": "Chọn xe: ngày đã được đặt sẵn, nhận xe sớm, thuê một ngày.",
+    "quick": {
+      "title": "Thanh toán một bước",
+      "agree": "Khi bấm “Thanh toán”, bạn chấp nhận",
+      "rules": "quy định thuê xe",
+      "pay": "Đồng ý, thanh toán · {amount}"
+    }
+  },
+  "error": {
+    "title": "Không tải được trang chủ",
+    "text": "Kiểm tra kết nối và thử lại."
+  },
+  "brands": "Hãng xe",
+  "popular": "Phổ biến",
+  "all": "Tất cả xe",
+  "more": "Xem tất cả: {count} xe",
+  "empty": {
+    "title": "Chưa có xe",
+    "text": "Mở danh mục hoặc chọn loại khác.",
+    "action": "Mở danh mục"
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "manager": {
+    "title": "Manager mode"
+  },
+  "documents": {
+    "title": "Documents",
+    "intro": "You can't book without photos of your passport and licence. The manager will check the originals at pickup.",
+    "error": "Couldn’t load your documents",
+    "status": {
+      "NONE": "Not uploaded",
+      "PENDING": "Under review",
+      "VERIFIED": "Verified",
+      "REJECTED": "Rejected"
+    },
+    "type": {
+      "PASSPORT": "Passport",
+      "LICENSE": "Driving licence",
+      "IDP": "International permit (IDP)"
+    },
+    "docStatus": {
+      "NONE": "Not uploaded",
+      "UPLOADED": "Uploaded",
+      "VERIFIED": "Verified",
+      "REJECTED": "Rejected"
+    },
+    "upload": "Upload",
+    "replace": "Replace",
+    "consent": "I agree to the processing of my personal data to verify documents for the rental.",
+    "retention": "Files are kept in private storage. Only rental staff can see them.",
+    "consentFirst": "Tick the consent box above first.",
+    "slot": {
+      "progress": "{done} of {total} uploaded",
+      "ready": "Documents ready",
+      "required": "Required",
+      "optional": "Optional",
+      "upload": "Upload photo",
+      "viaIdp": "Not needed: international permit uploaded",
+      "rejected": "Rejected, upload a new photo",
+      "hint": {
+        "PASSPORT": "Photo page, with all details readable",
+        "LICENSE": "Front side. An international permit also works",
+        "IDP": "If you have an international permit"
+      }
+    }
+  },
+  "language": {
+    "title": "Language"
+  },
+  "currency": {
+    "title": "Price currency",
+    "VND": "₫ VND",
+    "RUB": "₽ RUB",
+    "USD": "$ USD",
+    "note": "You always pay in dong; other currencies are for reference."
+  },
+  "timezone": {
+    "title": "Time zone",
+    "note": "Rental times are shown in the pick-up point’s time zone."
+  },
+  "help": {
+    "title": "Help",
+    "faq": "Questions and answers",
+    "rules": "Rental rules",
+    "privacy": "Privacy policy",
+    "support": "Support",
+    "supportPlaceholder": "[SUPPORT CONTACT — set it in admin settings]",
+    "placeholder": "[TEXT — set it in admin settings]"
+  }
+}

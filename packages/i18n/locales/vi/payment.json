@@ -1,0 +1,36 @@
+{
+  "title": "Thanh toán",
+  "qr": {
+    "label": "Mã QR thanh toán VietQR"
+  },
+  "transfer": "Nội dung chuyển khoản: {code}",
+  "timer": "Giữ xe thêm",
+  "openBank": "Mở app ngân hàng",
+  "waiting": "Đang chờ thanh toán. Màn hình sẽ tự cập nhật.",
+  "devPay": "Thử nghiệm: thanh toán thay khách",
+  "error": {
+    "title": "Không mở được thanh toán"
+  },
+  "expired": {
+    "title": "Đã hết thời gian thanh toán",
+    "text": "Đơn giữ xe đã hủy và xe có thể được người khác đặt. Hãy đặt lại, chỉ mất một phút.",
+    "action": "Về danh mục xe"
+  },
+  "toBookings": "Đơn của tôi",
+  "rub": {
+    "title": "Chuyển khoản bằng rúp",
+    "equals": "Tương đương {vnd} theo tỷ giá đã chốt",
+    "steps": "Mở ứng dụng ngân hàng, chọn chuyển khoản qua số điện thoại (SBP) và gửi đúng số tiền. Chạm vào dòng để sao chép.",
+    "phone": "Số điện thoại",
+    "bank": "Ngân hàng",
+    "recipient": "Người nhận",
+    "amount": "Số tiền",
+    "comment": "Nội dung chuyển khoản",
+    "copy": "Sao chép: {label}",
+    "claim": "Tôi đã chuyển",
+    "note": "Chỉ bấm sau khi đã chuyển tiền. Quản trị viên kiểm tra thủ công, xe được giữ tối đa 6 giờ.",
+    "checkingTitle": "Đang kiểm tra khoản chuyển",
+    "checkingText": "Khi quản trị viên thấy tiền, đơn sẽ tự xác nhận và bot sẽ nhắn cho bạn.",
+    "depositCash": "Tiền cọc {amount}: trả tiền mặt khi nhận xe"
+  }
+}

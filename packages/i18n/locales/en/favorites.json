@@ -1,0 +1,12 @@
+{
+  "title": "Favorites",
+  "error": {
+    "title": "Could not load favorites",
+    "text": "Check your connection and try again."
+  },
+  "empty": {
+    "title": "Nothing here yet",
+    "text": "Tap the heart on a bike and it will appear here.",
+    "action": "Open catalog"
+  }
+}

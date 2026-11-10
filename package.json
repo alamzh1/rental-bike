@@ -1,0 +1,38 @@
+{
+  "name": "rental-bike",
+  "private": true,
+  "packageManager": "pnpm@9.15.9",
+  "engines": {
+    "node": ">=20.19"
+  },
+  "scripts": {
+    "postinstall": "pnpm build:packages && pnpm --filter @rental/api db:generate",
+    "build:packages": "pnpm --filter @rental/i18n --filter @rental/shared build",
+    "dev": "pnpm infra && pnpm build:packages && pnpm -r --parallel --if-present dev",
+    "build": "pnpm build:packages && pnpm -r --if-present --filter \"./apps/*\" build",
+    "typecheck": "pnpm -r --if-present typecheck",
+    "lint": "eslint apps packages scripts",
+    "test:unit": "pnpm -r --if-present test && node --test scripts/public-env.test.mjs",
+    "test:integration": "node scripts/test-integration.mjs",
+    "check": "pnpm build:packages && pnpm typecheck && pnpm lint && pnpm test:unit && pnpm test:integration",
+    "db:migrate": "pnpm --filter @rental/api db:migrate",
+    "db:seed": "pnpm --filter @rental/api db:seed",
+    "public:setup": "node scripts/public-setup.mjs",
+    "public": "node scripts/public-run.mjs",
+    "e2e": "playwright test -c e2e",
+    "load": "node scripts/run-with-env.mjs k6 run load/booking-load.js",
+    "openapi": "node docs/tools/generate-openapi.mjs",
+    "infra": "docker compose up -d postgres redis backup && (docker compose up -d minio minio-init || echo '[infra] MinIO не запущен: проверьте MINIO_IMAGE в .env — API работает, загрузка файлов недоступна')"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.5",
+    "@playwright/test": "^1.64.1",
+    "@types/node": "^22.10.0",
+    "eslint": "^9.39.5",
+    "globals": "^15.14.0",
+    "sharp": "^0.35.5",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.72.1"
+  },
+  "type": "module"
+}

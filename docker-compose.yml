@@ -1,0 +1,93 @@
+# Локальная инфраструктура: PostgreSQL 16, Redis 7, MinIO и ежедневный бэкап БД.
+# Порты на хосте настраиваются через .env (значения по умолчанию ниже не конфликтуют с типовыми 5432/6379).
+name: rental-bike
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-rental}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-rental}
+      POSTGRES_DB: ${POSTGRES_DB:-rental}
+    ports:
+      - "127.0.0.1:${POSTGRES_PORT:-5442}:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-rental} -d ${POSTGRES_DB:-rental}"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "127.0.0.1:${REDIS_PORT:-6389}:6379"
+    volumes:
+      - redisdata:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+
+  minio:
+    image: ${MINIO_IMAGE:-minio/minio:latest}
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: ${S3_ACCESS_KEY:-minioadmin}
+      MINIO_ROOT_PASSWORD: ${S3_SECRET_KEY:-minioadmin}
+    ports:
+      - "127.0.0.1:${MINIO_PORT:-9010}:9000"
+      - "127.0.0.1:${MINIO_CONSOLE_PORT:-9011}:9001"
+    volumes:
+      - miniodata:/data
+    healthcheck:
+      test: ["CMD", "mc", "ready", "local"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+
+  # Создаёт бакеты: публичный для фото моделей, приватный (с SSE) для документов и фотоактов.
+  minio-init:
+    image: ${MC_IMAGE:-minio/mc:latest}
+    depends_on:
+      minio:
+        condition: service_healthy
+    environment:
+      S3_ACCESS_KEY: ${S3_ACCESS_KEY:-minioadmin}
+      S3_SECRET_KEY: ${S3_SECRET_KEY:-minioadmin}
+      S3_BUCKET_PUBLIC: ${S3_BUCKET_PUBLIC:-rental-public}
+      S3_BUCKET_PRIVATE: ${S3_BUCKET_PRIVATE:-rental-private}
+    entrypoint: >
+      /bin/sh -c "
+      mc alias set local http://minio:9000 $$S3_ACCESS_KEY $$S3_SECRET_KEY &&
+      mc mb --ignore-existing local/$$S3_BUCKET_PUBLIC &&
+      mc anonymous set download local/$$S3_BUCKET_PUBLIC &&
+      mc mb --ignore-existing local/$$S3_BUCKET_PRIVATE &&
+      mc anonymous set none local/$$S3_BUCKET_PRIVATE &&
+      exit 0
+      "
+    restart: "no"
+
+  # Ежедневный pg_dump, хранение 30 дней (история 86). Восстановление — docs/restore.md.
+  backup:
+    image: postgres:16-alpine
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      PGHOST: postgres
+      PGUSER: ${POSTGRES_USER:-rental}
+      PGPASSWORD: ${POSTGRES_PASSWORD:-rental}
+      PGDATABASE: ${POSTGRES_DB:-rental}
+      BACKUP_RETENTION_DAYS: ${BACKUP_RETENTION_DAYS:-30}
+    volumes:
+      - ./backups:/backups
+      - ./scripts/backup.sh:/usr/local/bin/backup.sh:ro
+    entrypoint: ["/bin/sh", "/usr/local/bin/backup.sh"]
+
+volumes:
+  pgdata:
+  redisdata:
+  miniodata:

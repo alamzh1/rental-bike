@@ -1,0 +1,2844 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/api/health": {
+      "get": {
+        "operationId": "HealthController_get",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/auth/telegram": {
+      "post": {
+        "operationId": "AuthController_login",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/me": {
+      "get": {
+        "operationId": "AuthController_me",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      },
+      "patch": {
+        "operationId": "AuthController_update",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/models": {
+      "get": {
+        "operationId": "CatalogController_list",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/models/count": {
+      "get": {
+        "operationId": "CatalogController_count",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/models/{id}": {
+      "get": {
+        "operationId": "CatalogController_get",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/models/{id}/availability": {
+      "get": {
+        "operationId": "CatalogController_busy",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/home": {
+      "get": {
+        "operationId": "CatalogController_home",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/now": {
+      "get": {
+        "operationId": "CatalogController_now",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/quotes": {
+      "post": {
+        "operationId": "PricingController_create",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/bookings": {
+      "post": {
+        "operationId": "BookingsController_create",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        }
+      },
+      "get": {
+        "operationId": "BookingsController_list",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/bookings/{id}": {
+      "get": {
+        "operationId": "BookingsController_get",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/bookings/{id}/cancel": {
+      "post": {
+        "operationId": "BookingsController_cancel",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/bookings/{id}/problem": {
+      "post": {
+        "operationId": "BookingsController_problem",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/bookings/{id}/bike-missing": {
+      "post": {
+        "operationId": "BookingsController_bikeMissing",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/bookings/{id}/bike-missing/accept": {
+      "post": {
+        "operationId": "BookingsController_acceptReplacement",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/bookings/{id}/bike-missing/cancel": {
+      "post": {
+        "operationId": "BookingsController_cancelMissing",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/bookings/{id}/calendar.ics": {
+      "get": {
+        "operationId": "BookingsController_calendar",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/bookings/{id}/pay": {
+      "post": {
+        "operationId": "PaymentsController_pay",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/bookings/{id}/pay/claim": {
+      "post": {
+        "operationId": "PaymentsController_claim",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/webhooks/payos": {
+      "post": {
+        "operationId": "PaymentsController_webhook",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/webhooks/payos/{locationId}": {
+      "post": {
+        "operationId": "PaymentsController_locationWebhook",
+        "parameters": [
+          {
+            "name": "locationId",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/dev/payments/{id}/pay": {
+      "post": {
+        "operationId": "PaymentsController_devPay",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/events": {
+      "post": {
+        "operationId": "AnalyticsController_track",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/telegram/webhook": {
+      "post": {
+        "operationId": "TelegramController_webhook",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/rates": {
+      "get": {
+        "operationId": "RatesController_get",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/documents": {
+      "post": {
+        "operationId": "DocumentsController_create",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        }
+      },
+      "get": {
+        "operationId": "DocumentsController_list",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/documents/{id}": {
+      "get": {
+        "operationId": "DocumentsController_get",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      },
+      "delete": {
+        "operationId": "DocumentsController_remove",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/documents/{id}/url": {
+      "get": {
+        "operationId": "DocumentsController_url",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ttl",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/files/public/*": {
+      "get": {
+        "operationId": "FilesController_publicFile",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/files/private": {
+      "put": {
+        "operationId": "FilesController_upload",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      },
+      "get": {
+        "operationId": "FilesController_read",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/manager/today": {
+      "get": {
+        "operationId": "ManagerController_today",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/manager/bikes": {
+      "get": {
+        "operationId": "ManagerController_bikes",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/manager/bookings/{code}": {
+      "get": {
+        "operationId": "ManagerController_detail",
+        "parameters": [
+          {
+            "name": "code",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/manager/bookings/{id}/photos": {
+      "post": {
+        "operationId": "ManagerController_photos",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/manager/bookings/{id}/handover": {
+      "post": {
+        "operationId": "ManagerController_handover",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/manager/bookings/{id}/return": {
+      "post": {
+        "operationId": "ManagerController_returnBike",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/manager/bookings/{id}/cash": {
+      "post": {
+        "operationId": "ManagerController_cash",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/manager/bookings/{id}/no-show": {
+      "post": {
+        "operationId": "ManagerController_noShow",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/manager/bookings/{id}/incident": {
+      "post": {
+        "operationId": "ManagerController_reportMissing",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/manager/bookings/{id}/incident/propose": {
+      "post": {
+        "operationId": "ManagerController_propose",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/manager/bookings/{id}/incident/dismiss": {
+      "post": {
+        "operationId": "ManagerController_dismiss",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/manager/bookings/{id}/incident/cancel": {
+      "post": {
+        "operationId": "ManagerController_cancelMissing",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/manager/bikes/{id}": {
+      "patch": {
+        "operationId": "ManagerController_patchBike",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/bookings/{id}/handover": {
+      "get": {
+        "operationId": "HandoverClientController_list",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/bookings/{id}/handover/{actId}/confirm": {
+      "post": {
+        "operationId": "HandoverClientController_confirm",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "actId",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/admin/auth/config": {
+      "get": {
+        "operationId": "AdminAuthController_config",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/auth/telegram": {
+      "post": {
+        "operationId": "AdminAuthController_telegram",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/auth/link": {
+      "post": {
+        "operationId": "AdminAuthController_link",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/auth/link/status": {
+      "post": {
+        "operationId": "AdminAuthController_linkStatus",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/auth/webapp": {
+      "post": {
+        "operationId": "AdminAuthController_webapp",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/auth/dev": {
+      "post": {
+        "operationId": "AdminAuthController_dev",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/auth/me": {
+      "get": {
+        "operationId": "AdminAuthController_me",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/auth/lang": {
+      "post": {
+        "operationId": "AdminAuthController_setLang",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/auth/logout": {
+      "post": {
+        "operationId": "AdminAuthController_logout",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/dashboard": {
+      "get": {
+        "operationId": "DashboardController_get",
+        "parameters": [
+          {
+            "name": "locationId",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/bookings": {
+      "get": {
+        "operationId": "AdminBookingsController_list",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      },
+      "post": {
+        "operationId": "AdminBookingsController_create",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/bookings/{id}": {
+      "get": {
+        "operationId": "AdminBookingsController_detail",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      },
+      "patch": {
+        "operationId": "AdminBookingsController_patch",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/bookings/{id}/documents/{documentId}/url": {
+      "get": {
+        "operationId": "AdminBookingsController_documentUrl",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "documentId",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/bookings/{id}/incident/dismiss": {
+      "post": {
+        "operationId": "AdminBookingsController_dismissIncident",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/bookings/{id}/incident/cancel": {
+      "post": {
+        "operationId": "AdminBookingsController_cancelIncident",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/bookings/{id}/acts/{actId}/photos": {
+      "get": {
+        "operationId": "AdminBookingsController_actPhotos",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "actId",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/acts": {
+      "get": {
+        "operationId": "AdminActsController_list",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/supervision": {
+      "get": {
+        "operationId": "SupervisionController_overview",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/chess": {
+      "get": {
+        "operationId": "ChessController_get",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/audit": {
+      "get": {
+        "operationId": "AuditController_list",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/brands": {
+      "get": {
+        "operationId": "AdminBrandsController_list",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      },
+      "post": {
+        "operationId": "AdminBrandsController_create",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/brands/{id}": {
+      "patch": {
+        "operationId": "AdminBrandsController_update",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/brands/{id}/logo": {
+      "post": {
+        "operationId": "AdminBrandsController_logo",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/models": {
+      "get": {
+        "operationId": "AdminModelsController_list",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      },
+      "post": {
+        "operationId": "AdminModelsController_create",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/models/{id}": {
+      "get": {
+        "operationId": "AdminModelsController_one",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      },
+      "patch": {
+        "operationId": "AdminModelsController_update",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/models/{id}/photos": {
+      "post": {
+        "operationId": "AdminModelsController_addPhoto",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      },
+      "patch": {
+        "operationId": "AdminModelsController_photos",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/bikes": {
+      "get": {
+        "operationId": "AdminBikesController_list",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      },
+      "post": {
+        "operationId": "AdminBikesController_create",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/bikes/{id}": {
+      "get": {
+        "operationId": "AdminBikesController_one",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      },
+      "patch": {
+        "operationId": "AdminBikesController_update",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/bikes/{id}/documents/{kind}": {
+      "post": {
+        "operationId": "AdminBikesController_docUpload",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "kind",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/bikes/{id}/documents/{kind}/confirm": {
+      "post": {
+        "operationId": "AdminBikesController_docConfirm",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "kind",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/bikes/{id}/documents/{kind}/url": {
+      "get": {
+        "operationId": "AdminBikesController_docUrl",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "kind",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/tariffs": {
+      "get": {
+        "operationId": "AdminTariffsController_list",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/tariffs/{modelId}": {
+      "patch": {
+        "operationId": "AdminTariffsController_set",
+        "parameters": [
+          {
+            "name": "modelId",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/seasons": {
+      "get": {
+        "operationId": "AdminSeasonsController_list",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      },
+      "post": {
+        "operationId": "AdminSeasonsController_create",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/seasons/{id}": {
+      "patch": {
+        "operationId": "AdminSeasonsController_update",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      },
+      "delete": {
+        "operationId": "AdminSeasonsController_remove",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/extras": {
+      "get": {
+        "operationId": "AdminExtrasController_list",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      },
+      "post": {
+        "operationId": "AdminExtrasController_create",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/extras/{id}": {
+      "patch": {
+        "operationId": "AdminExtrasController_update",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/locations": {
+      "get": {
+        "operationId": "AdminLocationsController_list",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      },
+      "post": {
+        "operationId": "AdminLocationsController_create",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/locations/{id}": {
+      "patch": {
+        "operationId": "AdminLocationsController_update",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/locations/{id}/owners": {
+      "post": {
+        "operationId": "AdminLocationsController_addOwner",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/locations/{id}/owners/{userId}": {
+      "delete": {
+        "operationId": "AdminLocationsController_removeOwner",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "userId",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/locations/{id}/payos": {
+      "put": {
+        "operationId": "AdminLocationsController_setPayos",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      },
+      "delete": {
+        "operationId": "AdminLocationsController_clearPayos",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/locations/{id}/managers": {
+      "post": {
+        "operationId": "AdminLocationsController_addManager",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/locations/{id}/managers/{userId}": {
+      "delete": {
+        "operationId": "AdminLocationsController_removeManager",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "userId",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/texts": {
+      "get": {
+        "operationId": "AdminTextsController_list",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      },
+      "patch": {
+        "operationId": "AdminTextsController_save",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/payments": {
+      "get": {
+        "operationId": "AdminPaymentsController_list",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/payments/reconciliation": {
+      "get": {
+        "operationId": "AdminPaymentsController_reconciliation",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/payments/deductions": {
+      "get": {
+        "operationId": "AdminPaymentsController_deductions",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/payments/rub-transfers": {
+      "get": {
+        "operationId": "AdminPaymentsController_rubTransfers",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/payments/{id}/rub-confirm": {
+      "post": {
+        "operationId": "AdminPaymentsController_rubConfirm",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/payments/{id}/rub-reject": {
+      "post": {
+        "operationId": "AdminPaymentsController_rubReject",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/payments/{id}/refund": {
+      "post": {
+        "operationId": "AdminPaymentsController_refund",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/documents": {
+      "get": {
+        "operationId": "AdminDocumentsController_list",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/documents/{id}/url": {
+      "get": {
+        "operationId": "AdminDocumentsController_url",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/documents/{id}/verify": {
+      "post": {
+        "operationId": "AdminDocumentsController_verify",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/settings": {
+      "get": {
+        "operationId": "AdminSettingsController_get",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      },
+      "patch": {
+        "operationId": "AdminSettingsController_patch",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/settings/public": {
+      "get": {
+        "operationId": "PublicSettingsController_get",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "settings"
+        ]
+      }
+    },
+    "/api/admin/banner": {
+      "get": {
+        "operationId": "AdminBannerController_get",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      },
+      "patch": {
+        "operationId": "AdminBannerController_save",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/banner/image": {
+      "post": {
+        "operationId": "AdminBannerController_image",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/finance/summary": {
+      "get": {
+        "operationId": "AdminFinanceController_summary",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/finance/expenses": {
+      "get": {
+        "operationId": "AdminFinanceController_expenses",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      },
+      "post": {
+        "operationId": "AdminFinanceController_create",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/finance/expenses/{id}": {
+      "patch": {
+        "operationId": "AdminFinanceController_update",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      },
+      "delete": {
+        "operationId": "AdminFinanceController_remove",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/tracking": {
+      "get": {
+        "operationId": "AdminTrackingController_list",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/tracking/{id}": {
+      "get": {
+        "operationId": "AdminTrackingController_detail",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/admin/tracking/{id}/tracker": {
+      "put": {
+        "operationId": "AdminTrackingController_connect",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      },
+      "delete": {
+        "operationId": "AdminTrackingController_disconnect",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/api/bookings/{id}/contract": {
+      "get": {
+        "operationId": "ContractsController_contract",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/bookings/{id}/file-link": {
+      "post": {
+        "operationId": "ContractsController_fileLink",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/bookings/{id}/contract/accept": {
+      "post": {
+        "operationId": "ContractsController_accept",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/booking-files/{id}/{file}": {
+      "get": {
+        "operationId": "BookingFilesController_file",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "file",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/favorites": {
+      "get": {
+        "operationId": "FavoritesController_list",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/favorites/{modelId}": {
+      "get": {
+        "operationId": "FavoritesController_status",
+        "parameters": [
+          {
+            "name": "modelId",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      },
+      "post": {
+        "operationId": "FavoritesController_add",
+        "parameters": [
+          {
+            "name": "modelId",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        }
+      },
+      "delete": {
+        "operationId": "FavoritesController_remove",
+        "parameters": [
+          {
+            "name": "modelId",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/i18n/{lang}": {
+      "get": {
+        "operationId": "I18nController_dictionary",
+        "parameters": [
+          {
+            "name": "lang",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/gps/forward": {
+      "get": {
+        "operationId": "GpsController_forward_get",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "gps"
+        ]
+      },
+      "post": {
+        "operationId": "GpsController_forward_post",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "gps"
+        ]
+      },
+      "put": {
+        "operationId": "GpsController_forward_put",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "gps"
+        ]
+      },
+      "delete": {
+        "operationId": "GpsController_forward_delete",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "gps"
+        ]
+      },
+      "patch": {
+        "operationId": "GpsController_forward_patch",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "gps"
+        ]
+      },
+      "options": {
+        "operationId": "GpsController_forward_options",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "gps"
+        ]
+      },
+      "head": {
+        "operationId": "GpsController_forward_head",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "gps"
+        ]
+      },
+      "search": {
+        "operationId": "GpsController_forward_search",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "gps"
+        ]
+      }
+    },
+    "/api/gps/{token}": {
+      "get": {
+        "operationId": "GpsController_ingest_get",
+        "parameters": [
+          {
+            "name": "token",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "gps"
+        ]
+      },
+      "post": {
+        "operationId": "GpsController_ingest_post",
+        "parameters": [
+          {
+            "name": "token",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "gps"
+        ]
+      },
+      "put": {
+        "operationId": "GpsController_ingest_put",
+        "parameters": [
+          {
+            "name": "token",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "gps"
+        ]
+      },
+      "delete": {
+        "operationId": "GpsController_ingest_delete",
+        "parameters": [
+          {
+            "name": "token",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "gps"
+        ]
+      },
+      "patch": {
+        "operationId": "GpsController_ingest_patch",
+        "parameters": [
+          {
+            "name": "token",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "gps"
+        ]
+      },
+      "options": {
+        "operationId": "GpsController_ingest_options",
+        "parameters": [
+          {
+            "name": "token",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "gps"
+        ]
+      },
+      "head": {
+        "operationId": "GpsController_ingest_head",
+        "parameters": [
+          {
+            "name": "token",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "gps"
+        ]
+      },
+      "search": {
+        "operationId": "GpsController_ingest_search",
+        "parameters": [
+          {
+            "name": "token",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "gps"
+        ]
+      }
+    }
+  },
+  "info": {
+    "title": "Аренда Байка API",
+    "description": "REST API Mini App, режима менеджера и админки. Ошибки — { code, message }; типы ответов — packages/shared/src/api/*.ts.",
+    "version": "0.1.0",
+    "contact": {}
+  },
+  "tags": [],
+  "servers": [],
+  "components": {
+    "securitySchemes": {
+      "bearer": {
+        "scheme": "bearer",
+        "bearerFormat": "JWT",
+        "type": "http"
+      },
+      "cookie": {
+        "type": "apiKey",
+        "in": "cookie",
+        "name": "admin_session"
+      }
+    },
+    "schemas": {}
+  }
+}

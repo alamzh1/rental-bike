@@ -1,0 +1,167 @@
+{
+  "handover": {
+    "title": "Hand-over and return reports",
+    "issue": "Bike hand-over",
+    "return": "Bike return",
+    "confirmed": "Confirmed",
+    "waiting": "Awaiting confirmation",
+    "plate": "Plate",
+    "mileage": "Mileage",
+    "km": "km",
+    "fuel": "Fuel",
+    "damages": "Damage",
+    "photo": "Report photo",
+    "confirm": "Confirm report",
+    "deductions": "Deducted from the deposit",
+    "depositRefund": "Deposit to be returned"
+  },
+  "title": "My bookings",
+  "tabs": {
+    "label": "Booking status",
+    "active": "Active",
+    "upcoming": "Upcoming",
+    "past": "Completed"
+  },
+  "empty": {
+    "action": "Choose a bike",
+    "active": {
+      "title": "No bike with you right now",
+      "text": "Your booking will show up here once the bike is handed over."
+    },
+    "upcoming": {
+      "title": "No upcoming bookings",
+      "text": "Pick dates and a bike and your booking will show up here."
+    },
+    "past": {
+      "title": "No completed bookings yet",
+      "text": "Past rentals and cancelled bookings will appear here."
+    }
+  },
+  "error": {
+    "title": "Couldn’t load your bookings"
+  },
+  "status": {
+    "PENDING_PAYMENT": "Awaiting payment",
+    "CONFIRMED": "Confirmed",
+    "ISSUED": "On the road",
+    "COMPLETED": "Completed",
+    "CANCELLED_BY_CLIENT": "Cancelled",
+    "CANCELLED_BY_SYSTEM": "Cancelled",
+    "PROBLEM": "Problem"
+  },
+  "card": {
+    "payWithin": "Pay within {time}",
+    "returnIn": "{time} until return",
+    "startsIn": "{time} until pickup"
+  },
+  "confirmed": {
+    "title": "Booking confirmed"
+  },
+  "pending": {
+    "hold": "Booking held for",
+    "pay": "Go to payment"
+  },
+  "qr": {
+    "label": "Booking QR code {code}",
+    "hint": "Show this code to the manager when you pick up the bike."
+  },
+  "issued": {
+    "untilReturn": "Until the bike is due back"
+  },
+  "completed": {
+    "text": "Rental finished. Thanks for riding with us!",
+    "depositBack": "The deposit has been returned."
+  },
+  "cancelled": {
+    "client": "You cancelled this booking.",
+    "refund": "Refund:",
+    "notPaid": "Cancelled: payment didn’t arrive in time.",
+    "noShow": "Cancelled: you didn’t show up for the bike in time.",
+    "bikeMissing": "The bike was not at the location, so the booking was cancelled. We will return everything you paid."
+  },
+  "problem": {
+    "text": "There’s a problem with this booking. Contact the manager and we’ll help."
+  },
+  "details": {
+    "from": "Pick-up",
+    "to": "Return",
+    "pickup": "Pick-up address",
+    "deliveryAddress": "Delivery address",
+    "rent": "Rental",
+    "extras": "Extras",
+    "delivery": "Delivery",
+    "deposit": "Deposit",
+    "deduction": "Deducted from deposit",
+    "method": "Payment",
+    "depositCash": "Deposit, in cash at pick-up"
+  },
+  "actions": {
+    "maps": "Open in Maps",
+    "calendar": "Add to calendar",
+    "contract": "Contract",
+    "fileError": "Couldn’t download the file. Please try again.",
+    "contact": "Contact the manager",
+    "contactPlaceholder": "[MANAGER CONTACT — set it in admin settings]",
+    "problem": "Report a problem",
+    "cancel": "Cancel booking"
+  },
+  "cancel": {
+    "title": "Cancel this booking?",
+    "text": "If you cancel now, you get a refund under the cancellation rules.",
+    "refund": "{percent}% of the rental refunded",
+    "rule": "The deposit is refunded in full. The closer to the start, the smaller the refund.",
+    "confirm": "Yes, cancel",
+    "keep": "Keep booking"
+  },
+  "problemSheet": {
+    "title": "Report a problem",
+    "text": "Pick what happened or describe it. The manager gets your message.",
+    "hints": "Common problems",
+    "hint": {
+      "wontStart": "The bike won’t start",
+      "accident": "Accident or damage",
+      "lostKey": "Lost the key",
+      "flatTire": "Flat tyre",
+      "other": "Something else"
+    },
+    "comment": "What happened",
+    "send": "Send",
+    "sent": "Message sent. The manager will contact you soon.",
+    "contactHint": "Urgent? Message the manager directly."
+  },
+  "contract": {
+    "title": "Rental agreement",
+    "text": "Open the agreement, check the terms and confirm it.",
+    "open": "Open agreement",
+    "accept": "I accept the agreement",
+    "accepted": "Accepted",
+    "waiting": "Awaiting confirmation",
+    "acceptedAt": "You accepted the agreement on {date}."
+  },
+  "ending": {
+    "soonTitle": "Your rental ends soon",
+    "soonText": "Please return the bike by {date}. Address: {address}",
+    "overdueTitle": "Your rental has ended",
+    "overdueText": "The return time was {date}. Please return the bike as soon as you can or contact the manager. Address: {address}",
+    "overdueShort": "Return time has passed",
+    "banner": "{model}: return by {date}"
+  },
+  "missing": {
+    "button": "The bike is not here",
+    "title": "Bike not at the location?",
+    "text": "We will tell the location right away. They will offer another bike or cancel with a full refund.",
+    "comment": "What happened (optional)",
+    "send": "Tell the location",
+    "waitTitle": "The location knows and is working on it",
+    "waitText": "If there is no answer, in {minutes} min you can cancel with a full refund.",
+    "waitOver": "The location has not answered yet. You can wait or cancel with a full refund.",
+    "offerTitle": "The location offers another bike",
+    "offerText": "Instead of your bike: {model}, plate {plate}.",
+    "offerFree": "The price stays the same, nothing extra to pay.",
+    "offerRefund": "This model costs less: we will return {amount}.",
+    "accept": "Accept the replacement",
+    "cancel": "Cancel and get all money back",
+    "others": "See bikes at other locations",
+    "disputed": "The location says the bike is there, so an administrator is reviewing this case and will contact you."
+  }
+}

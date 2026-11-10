@@ -1,0 +1,65 @@
+{
+  "error": {
+    "title": "Could not open this bike",
+    "text": "Check your connection or go back to the catalog."
+  },
+  "gallery": {
+    "label": "Photos: {name}",
+    "slide": "Photo {n} of {total}"
+  },
+  "reviews": "({count, plural, one {# review} other {# reviews}})",
+  "demo": "DEMO",
+  "license": {
+    "badge": "Licence needed",
+    "warning": "Without a licence you can rent bikes up to 50 cc. For this bike, select your category and upload your licence at checkout, or choose another bike."
+  },
+  "dates": {
+    "none": "Pick dates",
+    "busyUntil": "Booked until {date}",
+    "busy": "Booked for these dates"
+  },
+  "spec": {
+    "title": "Specifications",
+    "cc": "Engine",
+    "ccValue": "{cc} cc",
+    "electric": "Electric",
+    "transmission": "Gearbox",
+    "fuel": "Fuel use",
+    "fuelValue": "{value} l/100 km",
+    "tank": "Tank",
+    "tankValue": "{value} l",
+    "speed": "Top speed",
+    "speedValue": "{value} km/h",
+    "seats": "Seats",
+    "seatsValue": "{count, plural, one {# person} other {# people}}"
+  },
+  "about": "About this bike",
+  "tariff": {
+    "title": "Price per day",
+    "day": "1 day",
+    "month": "Month",
+    "from": "From {days, plural, one {# day} other {# days}}"
+  },
+  "included": "What is included",
+  "conditions": "Conditions",
+  "deposit": "Deposit",
+  "depositDocument": "A document instead of money",
+  "pickup": "Pick-up",
+  "action": {
+    "pickDates": "Pick dates",
+    "busy": "Not available for these dates",
+    "book": "Book · {price}",
+    "changeDates": "Change dates"
+  },
+  "ratingDemo": "demo",
+  "docs": {
+    "title": "Required documents",
+    "passport": "Passport",
+    "license": "Driving licence",
+    "idp": "International driving permit (Vienna Convention 1968)"
+  },
+  "restrictions": {
+    "title": "Restrictions",
+    "placeholder": "[MILEAGE AND INTER-PROVINCE TRAVEL RESTRICTIONS — fill in the admin settings]"
+  }
+}

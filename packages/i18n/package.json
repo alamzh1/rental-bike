@@ -1,0 +1,35 @@
+{
+  "name": "@rental/i18n",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Переводы RU/EN/VI (locales/<lang>/<namespace>.json), i18next + ICU, форматтеры цен, дат и времени.",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "browser": "./src/index.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": ["dist", "src", "locales"],
+  "scripts": {
+    "gen": "node scripts/gen-resources.mjs",
+    "build": "node scripts/gen-resources.mjs && tsc -p tsconfig.build.json",
+    "dev": "node scripts/gen-resources.mjs --watch & tsc -p tsconfig.build.json --watch --preserveWatchOutput",
+    "typecheck": "node scripts/gen-resources.mjs && tsc -p tsconfig.json --noEmit",
+    "test": "node scripts/gen-resources.mjs && vitest run --coverage"
+  },
+  "dependencies": {
+    "@rental/shared": "workspace:*",
+    "date-fns": "^3.6.0",
+    "date-fns-tz": "^3.2.0",
+    "i18next": "^23.16.8",
+    "i18next-icu": "^2.6.1",
+    "intl-messageformat": "^12.1.4"
+  },
+  "devDependencies": {
+    "@vitest/coverage-v8": "^3.2.7",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.7"
+  }
+}

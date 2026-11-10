@@ -1,0 +1,132 @@
+{
+  "start": {
+    "text": "Hi! Rent a scooter or motorbike in a few taps: pick dates, pay by QR and pick it up.",
+    "button": "Rent a bike"
+  },
+  "language": {
+    "changed": "I'll write in English from now on. Use the buttons below to see your bookings and return dates."
+  },
+  "hint": {
+    "text": "Open the app to rent a bike and manage your bookings.",
+    "button": "Open the app"
+  },
+  "openToday": "Open today's list",
+  "open": "Open booking",
+  "method": {
+    "VIETQR": "VietQR",
+    "CASH": "Cash at pickup",
+    "RUB_TRANSFER": "Transfer in rubles"
+  },
+  "receipt": {
+    "rent": "Rent, {days, plural, one {# day} other {# days}}",
+    "delivery": "Delivery",
+    "deposit": "Deposit"
+  },
+  "client": {
+    "confirmed": "Booking {code} is confirmed.\n{model}\nPickup: {start}\nReturn: {end}\nAddress: {address}\nManager: {contact}\nAt pickup show the booking code {code} or the QR in the app.",
+    "confirmedCash": "Booking {code} is confirmed.\n{model}\nPickup: {start}\nReturn: {end}\nAddress: {address}\nManager: {contact}\nPay at pickup: {amount}. Show the booking code {code} or the QR in the app.",
+    "receipt": "Receipt for booking {code}\n{lines}\nTotal paid: {total}\nPayment method: {method}\nTime: {paidAt}",
+    "reminder24h": "Pickup tomorrow: {model}, booking {code}.\nTime: {start}\nAddress: {address}\nMap: {mapUrl}",
+    "reminder2h": "Pickup in 2 hours: {model}, booking {code}.\nTime: {start}\nAddress: {address}\nMap: {mapUrl}",
+    "docs": "Booking {code}: documents are not uploaded yet. Please upload your passport and licence before pickup to speed things up.",
+    "returnReminder": "Booking {code}: return the bike in 12 hours, by {end}.\nAddress: {address}",
+    "overdue": "Booking {code}: the return time ({end}) has passed. A late fee of {hourlyFee} per hour applies. Please return the bike or contact the manager: {contact}.",
+    "cancelled": "Booking {code} is cancelled.",
+    "cancelledRefund": "Booking {code} is cancelled. Refund: {refund}.",
+    "expired": "Booking {code} was not paid in time and has been released.",
+    "refunded": "Refund of {amount} for booking {code} has been sent. Bank transfers can take a few banking days.",
+    "rate": "Thanks for riding with us! How was booking {code}? Open the app to rate the trip.",
+    "returnReminder2h": "Booking {code}: your rental ends in 2 hours. Please return the bike by {end}.\nAddress: {address}",
+    "replacementOffer": "Instead of the bike for booking {code}, the location offers {model}, plate {plate}. Open the booking to accept or cancel with a full refund.",
+    "bikeFound": "Booking {code}: the manager confirmed the bike is here. Go to the desk: {address}. If you still cannot find it, report again in the app.",
+    "replaced": "Replacement confirmed: booking {code}, now {model}.",
+    "bikeMissingCancelled": "Sorry, the bike was not at the location. Booking {code} is cancelled and we will return {refund}. More bikes are in the app.",
+    "bikeMissingWait": "The location has not answered about booking {code} yet. We are on it. You can wait or cancel with a full refund in the app.",
+    "rubTransferNotFound": "We can't find your transfer for booking {code} yet. Check the amount and details, or message the manager. We'll hold the booking a little longer.",
+    "documentRejected": "{type}: document rejected. Upload a new photo in the app.",
+    "documentRejectedReason": "{type}: document rejected.\nReason: {reason}\nUpload a new photo in the app.",
+    "confirmedDepositCash": "Booking {code} confirmed.\n{model}\nPick-up: {start}\nReturn: {end}\nAddress: {address}\nManager: {contact}\nDeposit in cash at pick-up: {amount}. Show booking code {code} or the QR in the app."
+  },
+  "manager": {
+    "newBooking": "New booking {code}\n{model}\nClient: {client}\nPickup: {start}\nReturn: {end}",
+    "newBookingCash": "New booking {code} (pay at pickup: {amount})\n{model}\nClient: {client}\nPickup: {start}\nReturn: {end}",
+    "cancelled": "Booking {code} is cancelled, the bike is free again.\n{model}, {start} - {end}",
+    "overdue": "ALERT: booking {code} is overdue (return was due {end}).\n{model}\nClient: {client}\nPhone: {phone}",
+    "summary": "Pickups tomorrow, {date}:\n{list}",
+    "summaryEmpty": "No pickups tomorrow, {date}.",
+    "summaryLine": "{time} - {model}, {code}, {client}",
+    "problem": "Client reported a problem with booking {code}.\n{model}\nClient: {client}, {phone}\n{comment}",
+    "paymentMismatch": "Payment amount mismatch for booking {code}: expected {expected}, received {received}. Status: Problem.",
+    "paymentAfterCancel": "Payment for booking {code} arrived after cancellation ({amount}). A refund is needed.",
+    "returnSoon": "Rental ends in 2 hours: booking {code}, bike {plate}.\n{model}\nReturn: {end}\nClient: {client}, {phone}",
+    "returnsSummary": "Returns for tomorrow, {date}:\n{list}",
+    "dueInsurance": "{plate}: insurance until {date}",
+    "dueService": "{plate}: service due {date}",
+    "bikesDue": "Bike deadlines coming up:\n{list}",
+    "bikeMoving": "ALERT: bike {plate} ({model}) is moving without a rental, speed {speed} km/h.\nMap: {mapUrl}",
+    "bikeMissing": "Customer could not find the bike: {code}\n{model}, plate {plate}\nCustomer: {client}, {phone}\nComment: {comment}\nOpen the booking and decide: another bike, a replacement or cancel.",
+    "bikeNotReturned": "Bike not returned and no identical one is free: {code}\n{model}, plate {plate}\nPickup: {start}\nCustomer: {client}, {phone}\nOpen the booking and offer a replacement in advance.",
+    "bikeReassigned": "The previous customer has not returned the bike. Booking {code} moved to bike {plate}.",
+    "replaced": "Customer accepted the replacement: {code}, now {model}.",
+    "bikeMissingCancelled": "Booking {code} cancelled: bike not at the location. Return {refund} to the customer and mark the refund in Payments."
+  },
+  "alert": "ALERT: {text}",
+  "admin": {
+    "text": "Choose how to sign in.",
+    "button": "Sign in as administrator",
+    "menu": "Admin",
+    "denied": "This command is for rental staff only.",
+    "client": "Sign in as client",
+    "incidentNoAnswer": "Location did not answer for 15 minutes: {code}\n{model}\nAddress: {address}\nCustomer: {phone}",
+    "depositDeducted": "Deposit deduction {amount}: booking {code}.",
+    "payosChanged": "{name} changed the payment account of a location: {address}. Customer money there now follows the new settings.",
+    "incidentDismissed": "The location answered \"the bike is here\", the customer reported otherwise: {code}\nAddress: {address}\nCustomer: {phone}",
+    "loginPrompt": "Sign in to the admin panel?\nThe request came from:\nDevice: {device}\nIP: {ip}\nCountry: {country}\n\nTap only if you just opened the sign-in page on this device and its address starts with {site}. If someone else sent you this link, tap Cancel.",
+    "loginConfirm": "Confirm sign-in",
+    "loginCancel": "Cancel",
+    "loginDone": "Sign-in confirmed. Go back to the admin page: it will open by itself.",
+    "loginCancelled": "Sign-in cancelled.",
+    "loginExpired": "This link has expired. Open the sign-in page again.",
+    "loginNotice": "Admin panel sign-in.\nDevice: {device}\nIP: {ip}\nCountry: {country}\n\nIf this was not you, send /logout right away: all sessions will close.",
+    "loggedOut": "All admin sessions are closed. You can sign in again from the sign-in page.",
+    "rubTransferClaimed": "A client reports a transfer: {rub} ₽, booking {code}.\nClient: {client}, {phone}\nCheck that it arrived and confirm it in the admin panel, under Payments.",
+    "documentsToCheck": "New booking {code}, client {client}: {count} document(s) to check. See Documents in the admin panel."
+  },
+  "bookings": {
+    "my": "📋 My bookings",
+    "ending": "⏰ When they end",
+    "hint": "Use the buttons below to see your bookings and return dates.",
+    "open": "Open {code}",
+    "period": "Pickup: {start}\nReturn: {end}",
+    "until": "Return by: {end}\n{left}",
+    "left": "{span} left",
+    "overdue": "Overdue by {span}",
+    "spanDays": "{days} d {hours} h",
+    "spanHours": "{hours} h {minutes} min",
+    "more": "Showing the first {count}. The rest are in the app.",
+    "yourId": "Your Telegram ID: {id}",
+    "title": {
+      "my": "Your bookings",
+      "ending": "When to return the bike",
+      "myStaff": "Location bookings",
+      "endingStaff": "Return dates"
+    },
+    "empty": {
+      "my": "No active bookings.",
+      "ending": "You have no bike on rent right now.",
+      "myStaff": "No active bookings.",
+      "endingStaff": "No bikes are on rent right now."
+    },
+    "status": {
+      "PENDING_PAYMENT": "Awaiting payment",
+      "CONFIRMED": "Confirmed",
+      "ISSUED": "Bike is with you",
+      "PROBLEM": "Manager help needed"
+    }
+  },
+  "documentType": {
+    "PASSPORT": "Passport",
+    "LICENSE": "Driving licence",
+    "IDP": "International permit"
+  }
+}

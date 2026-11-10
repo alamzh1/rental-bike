@@ -1,0 +1,12 @@
+{
+  "title": "Yêu thích",
+  "error": {
+    "title": "Không tải được danh sách yêu thích",
+    "text": "Kiểm tra kết nối và thử lại."
+  },
+  "empty": {
+    "title": "Chưa có gì",
+    "text": "Chạm vào hình trái tim ở xe, xe sẽ hiện ở đây.",
+    "action": "Mở danh mục"
+  }
+}

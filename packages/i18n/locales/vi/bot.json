@@ -1,0 +1,132 @@
+{
+  "start": {
+    "text": "Xin chào! Thuê xe máy chỉ với vài chạm: chọn ngày, thanh toán bằng QR và nhận xe.",
+    "button": "Thuê xe"
+  },
+  "language": {
+    "changed": "Từ giờ tôi sẽ nhắn bằng tiếng Việt. Các nút bên dưới hiển thị đơn thuê và hạn trả xe."
+  },
+  "hint": {
+    "text": "Hãy mở ứng dụng để thuê xe và quản lý đặt chỗ của bạn.",
+    "button": "Mở ứng dụng"
+  },
+  "openToday": "Mở danh sách hôm nay",
+  "open": "Mở đơn đặt xe",
+  "method": {
+    "VIETQR": "VietQR",
+    "CASH": "Tiền mặt khi nhận xe",
+    "RUB_TRANSFER": "Chuyển khoản bằng rúp"
+  },
+  "receipt": {
+    "rent": "Thuê xe, {days} ngày",
+    "delivery": "Giao xe",
+    "deposit": "Tiền cọc"
+  },
+  "client": {
+    "confirmed": "Đơn {code} đã được xác nhận.\n{model}\nNhận xe: {start}\nTrả xe: {end}\nĐịa chỉ: {address}\nQuản lý: {contact}\nKhi nhận xe hãy đưa mã đơn {code} hoặc mã QR trong ứng dụng.",
+    "confirmedCash": "Đơn {code} đã được xác nhận.\n{model}\nNhận xe: {start}\nTrả xe: {end}\nĐịa chỉ: {address}\nQuản lý: {contact}\nThanh toán khi nhận xe: {amount}. Hãy đưa mã đơn {code} hoặc mã QR trong ứng dụng.",
+    "receipt": "Biên lai đơn {code}\n{lines}\nĐã thanh toán: {total}\nPhương thức: {method}\nThời gian: {paidAt}",
+    "reminder24h": "Ngày mai nhận xe: {model}, đơn {code}.\nGiờ: {start}\nĐịa chỉ: {address}\nBản đồ: {mapUrl}",
+    "reminder2h": "2 giờ nữa nhận xe: {model}, đơn {code}.\nGiờ: {start}\nĐịa chỉ: {address}\nBản đồ: {mapUrl}",
+    "docs": "Đơn {code}: bạn chưa tải giấy tờ lên. Hãy tải hộ chiếu và bằng lái trước khi nhận xe để thủ tục nhanh hơn.",
+    "returnReminder": "Đơn {code}: 12 giờ nữa cần trả xe, trước {end}.\nĐịa chỉ: {address}",
+    "overdue": "Đơn {code}: đã quá giờ trả xe ({end}). Phụ phí {hourlyFee} mỗi giờ. Hãy trả xe hoặc liên hệ quản lý: {contact}.",
+    "cancelled": "Đơn {code} đã bị hủy.",
+    "cancelledRefund": "Đơn {code} đã bị hủy. Số tiền hoàn: {refund}.",
+    "expired": "Đơn {code} chưa được thanh toán kịp thời, xe đã được giải phóng.",
+    "refunded": "Đã hoàn {amount} cho đơn {code}. Chuyển khoản ngân hàng có thể mất vài ngày làm việc.",
+    "rate": "Cảm ơn bạn đã đi cùng chúng tôi! Chuyến đi theo đơn {code} thế nào? Hãy đánh giá trong ứng dụng.",
+    "returnReminder2h": "Đơn {code}: thời gian thuê kết thúc sau 2 giờ. Vui lòng trả xe trước {end}.\nĐịa chỉ: {address}",
+    "replacementOffer": "Thay cho xe của đơn {code}, điểm đề xuất {model}, biển số {plate}. Mở đơn để đồng ý hoặc hủy và được hoàn toàn bộ tiền.",
+    "bikeFound": "Đơn {code}: quản lý xác nhận xe có tại điểm. Hãy đến quầy: {address}. Nếu vẫn không thấy, hãy báo lại trong ứng dụng.",
+    "replaced": "Đã xác nhận đổi xe: đơn {code}, nay là {model}.",
+    "bikeMissingCancelled": "Xin lỗi, không có xe tại điểm. Đơn {code} đã hủy, chúng tôi sẽ hoàn {refund}. Bạn có thể xem các xe khác trong ứng dụng.",
+    "bikeMissingWait": "Điểm chưa phản hồi về đơn {code}. Chúng tôi đang xử lý. Bạn có thể chờ hoặc hủy và được hoàn toàn bộ tiền trong ứng dụng.",
+    "rubTransferNotFound": "Chúng tôi chưa thấy khoản chuyển cho đơn {code}. Hãy kiểm tra số tiền và thông tin, hoặc nhắn cho quản lý. Đơn được giữ thêm một thời gian ngắn.",
+    "documentRejected": "{type}: giấy tờ bị từ chối. Hãy tải ảnh mới trong ứng dụng.",
+    "documentRejectedReason": "{type}: giấy tờ bị từ chối.\nLý do: {reason}\nHãy tải ảnh mới trong ứng dụng.",
+    "confirmedDepositCash": "Đơn {code} đã được xác nhận.\n{model}\nNhận xe: {start}\nTrả xe: {end}\nĐịa chỉ: {address}\nQuản lý: {contact}\nTiền cọc trả tiền mặt khi nhận xe: {amount}. Hãy xuất trình mã đơn {code} hoặc mã QR trong ứng dụng."
+  },
+  "manager": {
+    "newBooking": "Đơn mới {code}\n{model}\nKhách: {client}\nNhận xe: {start}\nTrả xe: {end}",
+    "newBookingCash": "Đơn mới {code} (thanh toán khi nhận xe: {amount})\n{model}\nKhách: {client}\nNhận xe: {start}\nTrả xe: {end}",
+    "cancelled": "Đơn {code} đã bị hủy, xe đã trống trở lại.\n{model}, {start} - {end}",
+    "overdue": "CẢNH BÁO: đơn {code} quá hạn trả xe (hạn là {end}).\n{model}\nKhách: {client}\nĐiện thoại: {phone}",
+    "summary": "Lịch nhận xe ngày mai, {date}:\n{list}",
+    "summaryEmpty": "Ngày mai, {date}, không có lượt nhận xe.",
+    "summaryLine": "{time} - {model}, {code}, {client}",
+    "problem": "Khách báo sự cố với đơn {code}.\n{model}\nKhách: {client}, {phone}\n{comment}",
+    "paymentMismatch": "Số tiền thanh toán đơn {code} không khớp: cần {expected}, nhận {received}. Trạng thái: Sự cố.",
+    "paymentAfterCancel": "Thanh toán đơn {code} đến sau khi hủy ({amount}). Cần hoàn tiền.",
+    "returnSoon": "Hợp đồng thuê kết thúc sau 2 giờ: đơn {code}, xe {plate}.\n{model}\nTrả xe: {end}\nKhách: {client}, {phone}",
+    "returnsSummary": "Xe trả vào ngày mai, {date}:\n{list}",
+    "dueInsurance": "{plate}: bảo hiểm đến {date}",
+    "dueService": "{plate}: bảo dưỡng đến {date}",
+    "bikesDue": "Sắp đến hạn của xe:\n{list}",
+    "bikeMoving": "CẢNH BÁO: xe {plate} ({model}) đang di chuyển khi không có đơn thuê, tốc độ {speed} km/h.\nBản đồ: {mapUrl}",
+    "bikeMissing": "Khách không tìm thấy xe: {code}\n{model}, biển số {plate}\nKhách: {client}, {phone}\nGhi chú: {comment}\nHãy mở đơn và quyết định: xe khác, đổi mẫu hoặc hủy.",
+    "bikeNotReturned": "Xe chưa được trả và không có xe thay thế cùng mẫu: {code}\n{model}, biển số {plate}\nNhận xe: {start}\nKhách: {client}, {phone}\nHãy mở đơn và đề xuất xe thay thế trước.",
+    "bikeReassigned": "Khách trước chưa trả xe. Đơn {code} đã chuyển sang xe {plate}.",
+    "replaced": "Khách đồng ý đổi xe: {code}, nay là {model}.",
+    "bikeMissingCancelled": "Đơn {code} đã hủy: không có xe tại điểm. Hãy hoàn {refund} cho khách và đánh dấu trong mục Thanh toán."
+  },
+  "alert": "CẢNH BÁO: {text}",
+  "admin": {
+    "text": "Chọn cách đăng nhập.",
+    "button": "Vào với tư cách quản trị viên",
+    "menu": "Quản trị",
+    "denied": "Lệnh này chỉ dành cho nhân viên.",
+    "client": "Vào với tư cách khách hàng",
+    "incidentNoAnswer": "Điểm không phản hồi trong 15 phút: {code}\n{model}\nĐịa chỉ: {address}\nKhách: {phone}",
+    "depositDeducted": "Khấu trừ tiền cọc {amount}: đơn {code}.",
+    "payosChanged": "{name} đã đổi tài khoản thanh toán của điểm: {address}. Tiền khách tại đây nay theo cài đặt mới.",
+    "incidentDismissed": "Điểm trả lời \"xe có tại điểm\" nhưng khách báo ngược lại: {code}\nĐịa chỉ: {address}\nKhách: {phone}",
+    "loginPrompt": "Đăng nhập trang quản trị?\nYêu cầu đến từ:\nThiết bị: {device}\nIP: {ip}\nQuốc gia: {country}\n\nChỉ nhấn nếu bạn vừa mở trang đăng nhập trên thiết bị này và địa chỉ trang bắt đầu bằng {site}. Nếu người khác gửi liên kết này, hãy nhấn Hủy.",
+    "loginConfirm": "Xác nhận đăng nhập",
+    "loginCancel": "Hủy",
+    "loginDone": "Đã xác nhận. Hãy quay lại trang quản trị: trang sẽ tự mở.",
+    "loginCancelled": "Đã hủy đăng nhập.",
+    "loginExpired": "Liên kết đã hết hạn. Hãy mở lại trang đăng nhập.",
+    "loginNotice": "Đã đăng nhập trang quản trị.\nThiết bị: {device}\nIP: {ip}\nQuốc gia: {country}\n\nNếu không phải bạn, hãy gửi /logout ngay: mọi phiên sẽ đóng.",
+    "loggedOut": "Đã đóng mọi phiên quản trị. Bạn có thể đăng nhập lại từ trang đăng nhập.",
+    "rubTransferClaimed": "Khách báo đã chuyển khoản: {rub} ₽, đơn {code}.\nKhách: {client}, {phone}\nHãy kiểm tra và xác nhận trong trang quản trị, mục Thanh toán.",
+    "documentsToCheck": "Đơn mới {code}, khách {client}: có {count} giấy tờ cần kiểm tra. Xem mục Giấy tờ trong trang quản trị."
+  },
+  "bookings": {
+    "my": "📋 Đơn của tôi",
+    "ending": "⏰ Khi nào hết hạn",
+    "hint": "Các nút bên dưới hiển thị đơn thuê và hạn trả xe.",
+    "open": "Mở {code}",
+    "period": "Nhận xe: {start}\nTrả xe: {end}",
+    "until": "Trả trước: {end}\n{left}",
+    "left": "Còn {span}",
+    "overdue": "Quá hạn {span}",
+    "spanDays": "{days} ngày {hours} giờ",
+    "spanHours": "{hours} giờ {minutes} phút",
+    "more": "Hiển thị {count} đơn đầu tiên. Xem các đơn còn lại trong ứng dụng.",
+    "yourId": "Telegram ID của bạn: {id}",
+    "title": {
+      "my": "Đơn của bạn",
+      "ending": "Khi nào cần trả xe",
+      "myStaff": "Đơn của điểm",
+      "endingStaff": "Hạn trả xe"
+    },
+    "empty": {
+      "my": "Không có đơn đang hoạt động.",
+      "ending": "Hiện bạn không thuê xe nào.",
+      "myStaff": "Không có đơn đang hoạt động.",
+      "endingStaff": "Hiện không có xe nào đang cho thuê."
+    },
+    "status": {
+      "PENDING_PAYMENT": "Chờ thanh toán",
+      "CONFIRMED": "Đã xác nhận",
+      "ISSUED": "Xe đang ở chỗ bạn",
+      "PROBLEM": "Cần quản lý hỗ trợ"
+    }
+  },
+  "documentType": {
+    "PASSPORT": "Hộ chiếu",
+    "LICENSE": "Bằng lái xe",
+    "IDP": "Bằng lái quốc tế"
+  }
+}

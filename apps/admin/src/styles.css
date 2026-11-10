@@ -1,0 +1,109 @@
+@import '@rental/ui/styles.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Админка — рабочий инструмент: цифры в таблицах не прыгают, подпись таблиц не наследует жирность браузера. */
+table {
+  font-variant-numeric: tabular-nums;
+}
+th {
+  font-weight: inherit;
+  text-align: inherit;
+}
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+/* Иконка календаря в полях дат следует теме */
+[data-theme='dark'] input::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+/* Серии графика финансов: проверены на различимость при дальтонизме и контраст к фону в обеих темах */
+:root,
+[data-theme='light'] {
+  --chart-income: #0a5cff;
+  --chart-expense: #c8680a;
+}
+[data-theme='dark'] {
+  --chart-income: #5c8dff;
+  --chart-expense: #c8781f;
+}
+
+/* Содержимое колонок сетки не распирает страницу на узком экране */
+main .grid > * {
+  min-width: 0;
+}
+
+/* Телефон и планшет */
+@media (max-width: 1023px) {
+  /* iOS увеличивает страницу при фокусе на поле со шрифтом меньше 16px */
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+  }
+  /* Ссылка в строке таблицы удобна для пальца, высота строки не меняется */
+  main table a {
+    display: inline-block;
+    padding-block: 10px;
+    margin-block: -10px;
+  }
+}
+
+/* Телефон: строка таблицы — карточка «подпись — значение» */
+@media (max-width: 767px) {
+  .dt-stack,
+  .dt-stack > tbody,
+  .dt-stack > tbody > tr,
+  .dt-stack > tbody > tr > td {
+    display: block;
+    width: 100%;
+  }
+  .dt-stack > thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+  .dt-stack > tbody > tr {
+    padding-block: 12px;
+  }
+  .dt-stack > tbody > tr > td {
+    position: relative;
+    min-height: 26px;
+    padding: 3px 0 3px 42% !important;
+    text-align: right;
+    white-space: normal !important;
+    overflow-wrap: anywhere;
+  }
+  .dt-stack > tbody > tr > td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    top: 3px;
+    width: 40%;
+    font-size: 13px;
+    line-height: 20px;
+    color: var(--ink-muted);
+    text-align: left;
+  }
+  /* Первая ячейка — заголовок карточки, ячейка без заголовка колонки — действие */
+  .dt-stack > tbody > tr > td:first-child,
+  .dt-stack > tbody > tr > td[data-label=''] {
+    padding-left: 0 !important;
+    text-align: left;
+  }
+  .dt-stack > tbody > tr > td:first-child::before,
+  .dt-stack > tbody > tr > td[data-label='']::before {
+    content: none;
+  }
+  .dt-stack > tbody > tr > td:empty {
+    display: none;
+  }
+}

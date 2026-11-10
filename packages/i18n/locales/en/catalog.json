@@ -1,0 +1,94 @@
+{
+  "title": "Catalog",
+  "search": {
+    "label": "Search bikes",
+    "placeholder": "Search by model or brand"
+  },
+  "filters": {
+    "title": "Filters",
+    "open": "Open filters",
+    "openCount": "Filters, active: {count}",
+    "reset": "Reset",
+    "show": "{count, plural, one {Show # bike} other {Show # bikes}}",
+    "showNone": "Nothing found",
+    "showUnknown": "Show bikes",
+    "type": "Type",
+    "cc": "Engine size",
+    "price": "Price per day",
+    "priceRange": "{min} – {max}",
+    "priceFrom": "From",
+    "priceTo": "To",
+    "brand": "Brand",
+    "options": "Options",
+    "sort": "Sort by",
+    "category": "Categories",
+    "point": "Pickup location",
+    "allPoints": "All locations"
+  },
+  "category": {
+    "ALL": "All",
+    "SCOOTER": "Scooter 110–125",
+    "MAXI_SCOOTER": "Maxi scooter 150+",
+    "SEMI_AUTO": "Semi-automatic",
+    "MOTORCYCLE": "Motorcycle",
+    "ELECTRIC": "Electric"
+  },
+  "type": {
+    "AUTOMATIC": "Automatic",
+    "SEMI_AUTO": "Semi-automatic",
+    "MANUAL": "Manual",
+    "ELECTRIC": "Electric"
+  },
+  "cc": {
+    "50": "up to 50 cc",
+    "110-125": "110–125 cc",
+    "150-160": "150–160 cc",
+    "300+": "300+ cc"
+  },
+  "feature": {
+    "TRUNK": "Trunk",
+    "USB": "USB charging",
+    "ABS": "ABS",
+    "SMART_KEY": "Smart Key"
+  },
+  "sort": {
+    "price_asc": "Price: low to high",
+    "price_desc": "Price: high to low",
+    "rating": "Top rated",
+    "popularity": "Most popular"
+  },
+  "card": {
+    "cc": "{cc} cc",
+    "electric": "Electric",
+    "favoriteAdd": "Add to favorites: {name}",
+    "favoriteRemove": "Remove from favorites: {name}",
+    "ratingLabel": "Rating {rating}, reviews: {count}",
+    "perDay": "/day",
+    "total": "{price} for {days, plural, one {# day} other {# days}}",
+    "busyUntil": "Booked until {date}",
+    "busy": "Booked for these dates",
+    "book": "Book",
+    "needLicense": "Licence needed"
+  },
+  "dates": {
+    "pick": "Pick dates"
+  },
+  "count": "{count, plural, one {# bike found} other {# bikes found}}",
+  "error": {
+    "title": "Could not load bikes",
+    "text": "Check your connection and try again."
+  },
+  "empty": {
+    "none": {
+      "title": "Nothing found",
+      "text": "Try removing some conditions.",
+      "action": "Reset filters",
+      "pickDates": "Pick dates"
+    },
+    "busy": {
+      "title": "All bikes are booked for {period}",
+      "text": "Shift your dates and we will show free bikes.",
+      "action": "Shift dates"
+    }
+  }
+}

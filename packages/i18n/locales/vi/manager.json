@@ -1,0 +1,197 @@
+{
+  "title": "Chế độ quản lý",
+  "tab": {
+    "label": "Mục",
+    "today": "Hôm nay",
+    "bikes": "Đội xe"
+  },
+  "scan": {
+    "button": "Quét mã QR",
+    "prompt": "Hướng camera vào mã QR của đơn",
+    "failed": "Không mở được camera. Hãy nhập mã đơn."
+  },
+  "code": {
+    "label": "Mã đơn",
+    "placeholder": "BK-24117",
+    "submit": "Tìm đơn",
+    "hint": "Mã trên màn hình của khách hoặc trong mã QR"
+  },
+  "today": {
+    "issues": "Giao xe",
+    "returns": "Nhận xe",
+    "emptyIssues": "Hôm nay không có xe cần giao",
+    "emptyReturns": "Hôm nay không có xe cần nhận",
+    "emptyHint": "Đơn mới sẽ tự hiện ở đây. Bạn cũng có thể tìm đơn bằng mã QR.",
+    "overdue": "Quá hạn",
+    "cashDue": "Thu tiền mặt: {amount}",
+    "issueAt": "Giao lúc {time}",
+    "returnAt": "Nhận lúc {time}",
+    "reload": "Làm mới",
+    "incident": "Không có xe"
+  },
+  "status": {
+    "PENDING_PAYMENT": "Chờ thanh toán",
+    "CONFIRMED": "Đã xác nhận",
+    "ISSUED": "Đã giao",
+    "COMPLETED": "Hoàn tất",
+    "CANCELLED_BY_CLIENT": "Khách đã hủy",
+    "CANCELLED_BY_SYSTEM": "Hệ thống đã hủy",
+    "PROBLEM": "Có sự cố"
+  },
+  "booking": {
+    "client": "Khách hàng",
+    "phone": "Điện thoại",
+    "call": "Gọi",
+    "period": "Thời gian",
+    "bike": "Xe",
+    "noName": "Chưa có tên",
+    "notFound": "Không tìm thấy đơn",
+    "wrongLocation": "Đơn này thuộc điểm khác",
+    "back": "Về danh sách",
+    "retry": "Thử lại"
+  },
+  "docs": {
+    "title": "Giấy tờ của khách",
+    "empty": "Khách chưa tải giấy tờ lên. Hãy kiểm tra bản gốc.",
+    "view": "Mở",
+    "verifiedAt": "Đã kiểm tra {date}",
+    "type": {
+      "PASSPORT": "Hộ chiếu",
+      "LICENSE": "Bằng lái",
+      "IDP": "Bằng lái quốc tế"
+    },
+    "state": {
+      "UPLOADED": "Chưa kiểm tra",
+      "VERIFIED": "Đã kiểm tra",
+      "REJECTED": "Bị từ chối"
+    },
+    "hint": "Quản trị viên kiểm tra giấy tờ trong trang quản trị. Tại đây bạn thấy kết quả; khi giao xe hãy đối chiếu bản gốc với bản sao."
+  },
+  "handover": {
+    "title": "Giao xe",
+    "bike": "Xe",
+    "bikeHint": "Các xe trống cùng mẫu",
+    "mileage": "Số km",
+    "fuel": "Nhiên liệu",
+    "photos": "Ảnh xe",
+    "photosHint": "Cần từ {min} đến {max} ảnh từ mọi phía",
+    "damages": "Hư hỏng trước khi giao",
+    "damagesHint": "Vết xước, sứt mẻ, những gì đã có sẵn",
+    "submit": "Tạo biên bản giao xe",
+    "sent": "Đã gửi biên bản cho khách",
+    "waiting": "Đang chờ khách xác nhận biên bản trong ứng dụng",
+    "confirmed": "Khách đã xác nhận biên bản. Xe đã được giao.",
+    "refresh": "Kiểm tra xác nhận",
+    "notReady": "Cần: xe, số km và ảnh ({count}/{min})"
+  },
+  "return": {
+    "title": "Nhận xe",
+    "submit": "Nhận xe và đóng đơn",
+    "mileage": "Số km khi trả",
+    "fuel": "Nhiên liệu",
+    "photos": "Ảnh khi trả",
+    "damages": "Hư hỏng",
+    "damagesHint": "Những gì phát sinh trong thời gian thuê",
+    "late": "Trả muộn",
+    "lateNone": "Đúng hạn, không phụ thu",
+    "lateFee": "Phụ thu trả muộn {minutes} phút: {amount}",
+    "deductions": "Khấu trừ tiền cọc",
+    "addDeduction": "Thêm khoản khấu trừ",
+    "removeDeduction": "Xóa khoản khấu trừ",
+    "amount": "Số tiền, ₫",
+    "reason": "Lý do",
+    "deductionPhotos": "Ảnh hư hỏng",
+    "exceeds": "Khấu trừ vượt quá tiền cọc ({amount})",
+    "done": "Đơn đã đóng",
+    "mileageLower": "Số km thấp hơn lúc giao ({value} km)",
+    "refundLabel": "Hoàn lại tiền cọc",
+    "surchargeLabel": "Phụ thu cần thu"
+  },
+  "cash": {
+    "title": "Thu tiền mặt",
+    "amount": "Số tiền, ₫",
+    "kind": "Khoản thu",
+    "kinds": {
+      "RENT": "Tiền thuê",
+      "DEPOSIT": "Tiền cọc",
+      "PREPAYMENT": "Trả trước",
+      "SURCHARGE": "Phụ thu"
+    },
+    "submit": "Nhận tiền mặt",
+    "done": "Đã nhận: {amount}",
+    "all": "Toàn bộ số tiền"
+  },
+  "noShow": {
+    "button": "Khách không đến",
+    "title": "Khách không đến?",
+    "text": "Đơn sẽ bị hủy, tiền hoàn theo quy tắc hủy.",
+    "confirm": "Ghi nhận không đến",
+    "cancel": "Hủy",
+    "done": "Đã hủy đơn: khách không đến"
+  },
+  "bikes": {
+    "title": "Đội xe của điểm",
+    "empty": "Chưa có xe nào",
+    "mileage": "{value} km",
+    "status": {
+      "ACTIVE": "Sẵn sàng",
+      "REPAIR": "Đang sửa"
+    },
+    "toRepair": "Đưa đi sửa",
+    "toActive": "Đưa vào hoạt động",
+    "readyAt": "Sửa xong ngày",
+    "readyUntil": "Sửa đến {date}",
+    "readyNone": "chưa rõ ngày",
+    "sheetTitle": "Đưa xe {plate} đi sửa",
+    "sheetHint": "Đến ngày này xe sẽ không có sẵn để đặt.",
+    "save": "Lưu",
+    "close": "Đóng"
+  },
+  "photo": {
+    "add": "Thêm ảnh",
+    "remove": "Xóa ảnh",
+    "uploading": "Đang tải lên",
+    "failed": "Tải lên thất bại",
+    "retry": "Thử lại",
+    "count": "{count}/{max}"
+  },
+  "error": {
+    "PHOTOS_COUNT": "Cần từ 4 đến 8 ảnh",
+    "WRONG_LOCATION": "Đơn này thuộc điểm khác",
+    "BIKE_NOT_AVAILABLE": "Xe đang bận, đang sửa hoặc khác mẫu",
+    "ACT_EXISTS": "Biên bản đã được tạo",
+    "DEDUCTION_TOO_LARGE": "Khoản khấu trừ vượt quá tiền cọc đã thu",
+    "MILEAGE_LOWER": "Số km thấp hơn lúc giao",
+    "CASH_EXCEEDS_DUE": "Số tiền lớn hơn số còn phải thu. Khoản này có thể đã được ghi. Hãy làm mới đơn.",
+    "BIKE_HAS_ACTIVE_BOOKING": "Xe này đang có đơn. Hãy hoàn tất hoặc chuyển đơn sang xe khác trước.",
+    "PHOTO_NOT_UPLOADED": "Một số ảnh chưa tải lên. Hãy tải lại."
+  },
+  "sum": {
+    "total": "Tiền thuê",
+    "deposit": "Tiền cọc",
+    "paid": "Đã thanh toán",
+    "cashDue": "Cần thu tiền mặt",
+    "deducted": "Đã khấu trừ"
+  },
+  "incident": {
+    "report": "Xe này không có tại điểm",
+    "title": "Không có xe tại điểm",
+    "source": {
+      "CLIENT": "Khách báo không tìm thấy xe.",
+      "STAFF": "Nhân viên báo không có xe.",
+      "SYSTEM": "Khách trước chưa trả xe này và không còn xe giống vậy."
+    },
+    "sameModel": "Còn {count} xe trống cùng mẫu. Chọn biển số trong mẫu giao xe bên dưới, khách không bị thiệt.",
+    "noSameModel": "Không còn xe trống cùng mẫu.",
+    "proposed": "Đã đề xuất cho khách: {model}, biển số {plate}. Đang chờ khách trả lời trong ứng dụng.",
+    "replacement": "Mẫu xe khác để thay thế",
+    "choose": "Chọn xe",
+    "refund": "hoàn {amount}",
+    "terms": "Đắt hơn: khách không trả thêm. Rẻ hơn: phần chênh lệch được hoàn lại.",
+    "propose": "Đề xuất cho khách",
+    "noReplacement": "Điểm không còn xe trống để thay thế.",
+    "present": "Xe có tại điểm",
+    "cancel": "Hủy và hoàn toàn bộ tiền",
+    "cancelConfirm": "Hủy đơn và hoàn toàn bộ tiền? Bạn cần chuyển tiền thủ công."
+  }
+}

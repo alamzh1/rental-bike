@@ -1,0 +1,52 @@
+{
+  "title": "When do you need a bike?",
+  "clear": "Clear dates",
+  "pickInCalendar": "Pick in calendar",
+  "quick": {
+    "label": "Quick date choice",
+    "today": "Today",
+    "tomorrow": "Tomorrow",
+    "days3": "3 days",
+    "week": "Week",
+    "month": "Month"
+  },
+  "apply": {
+    "model": "Done",
+    "catalog": "Show bikes",
+    "sheet": "Done",
+    "pending": "Pick your dates"
+  },
+  "month": {
+    "prev": "Previous month",
+    "next": "Next month"
+  },
+  "weekdays": {
+    "mon": "Mon",
+    "tue": "Tue",
+    "wed": "Wed",
+    "thu": "Thu",
+    "fri": "Fri",
+    "sat": "Sat",
+    "sun": "Sun"
+  },
+  "day": {
+    "busy": "unavailable",
+    "past": "not available",
+    "start": "pick-up",
+    "end": "return"
+  },
+  "legend": {
+    "busy": "Crossed-out dates are taken."
+  },
+  "time": {
+    "start": "Pick-up time",
+    "end": "Return time"
+  },
+  "summary": {
+    "days": "{days, plural, one {# day} other {# days}}"
+  },
+  "hint": {
+    "start": "Tap your pick-up day",
+    "end": "Now tap your return day"
+  }
+}

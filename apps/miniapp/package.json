@@ -1,0 +1,47 @@
+{
+  "name": "@rental/miniapp",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Telegram Mini App: оболочка (таск 02), экраны фич наполняют таски 05–09.",
+  "dependencies": {
+    "@rental/i18n": "workspace:*",
+    "@rental/shared": "workspace:*",
+    "@rental/ui": "workspace:*",
+    "@tanstack/react-query": "^5.105.0",
+    "@telegram-apps/sdk-react": "^3.3.9",
+    "i18next": "^23.16.8",
+    "leaflet": "^1.9.4",
+    "lucide-react": "^0.577.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-i18next": "^15.7.4",
+    "react-leaflet": "^4.2.1",
+    "react-router-dom": "^6.30.6"
+  },
+  "devDependencies": {
+    "@size-limit/preset-app": "^11.2.0",
+    "@types/leaflet": "^1.9.15",
+    "@types/qrcode": "^1.5.5",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.7.0",
+    "autoprefixer": "^10.4.20",
+    "jsqr": "^1.4.0",
+    "postcss": "^8.4.49",
+    "qrcode": "^1.5.4",
+    "size-limit": "^11.2.0",
+    "tailwindcss": "^3.4.19",
+    "typescript": "^5.9.3",
+    "vite": "^5.4.21",
+    "vitest": "^3.2.7"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "size": "vite build --logLevel warn && size-limit",
+    "test": "vitest run && pnpm run size"
+  }
+}

@@ -1,0 +1,44 @@
+<!-- @dsCard height=288 -->
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Cover</title>
+<style>
+  html, body { margin: 0; background: var(--bg); }
+  .cover { position: relative; width: 960px; height: 288px; overflow: hidden; background: var(--bg); font-family: var(--font-sans); }
+  .cover svg { position: absolute; inset: 0; }
+  .promo { fill: var(--promo); }
+  .slab { fill: var(--inverse); }
+  .cta { fill: var(--accent); }
+  .wheel { fill: none; stroke: var(--on-promo); stroke-width: 12; }
+  .hub { fill: var(--on-promo); }
+  .text { position: absolute; left: 48px; bottom: 40px; max-width: 440px; }
+  .name { margin: 0; font-size: 88px; line-height: .92; font-weight: 800; letter-spacing: -0.03em; color: var(--ink); }
+  .tag { margin: 16px 0 0; font-size: 14px; line-height: 20px; font-weight: 500; color: var(--ink-muted); }
+</style>
+</head>
+<body>
+<div class="cover">
+  <svg viewBox="0 0 960 288" width="960" height="288" aria-hidden="true">
+    <!--
+      blocks: promo 376×132 (radius-xl), inverse slab 432×96 (radius-xl), accent CTA 136×64 (radius-md)
+      arrangement: promo bleeds off the top-right edge; the slab sits a space-6 step below it, like the floating price bar under a banner
+      pattern: literal motif, two wheels as rings in on-promo on the promo block — the product is a bike, the brand reads as "photo plate + dark bar + blue button"
+      scales: gaps space-6 (24) and space-4 (16), radii radius-xl 28 and radius-md 16, ring stroke space-3 (12)
+    -->
+    <rect class="promo" x="584" y="-28" width="404" height="132" rx="28"/>
+    <circle class="wheel" cx="676" cy="44" r="30"/>
+    <circle class="hub" cx="676" cy="44" r="6"/>
+    <circle class="wheel" cx="796" cy="44" r="30"/>
+    <circle class="hub" cx="796" cy="44" r="6"/>
+    <rect class="slab" x="496" y="128" width="432" height="96" rx="28"/>
+    <rect class="cta" x="776" y="144" width="136" height="64" rx="16"/>
+  </svg>
+  <div class="text">
+    <p class="name">Байкрент</p>
+    <p class="tag">Аренда байка за 60 секунд прямо в Telegram</p>
+  </div>
+</div>
+</body>
+</html>

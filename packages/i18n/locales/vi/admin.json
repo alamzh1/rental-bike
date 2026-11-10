@@ -1,0 +1,353 @@
+{
+  "appName": "Quản trị cho thuê",
+  "skipToContent": "Đến nội dung",
+  "nav": {
+    "label": "Mục",
+    "dashboard": "Tổng quan",
+    "bookings": "Đơn thuê",
+    "chess": "Lịch xe",
+    "tracking": "Theo dõi xe",
+    "fleet": "Đội xe",
+    "finance": "Tài chính",
+    "prices": "Giá",
+    "locations": "Điểm nhận xe",
+    "payments": "Thanh toán",
+    "texts": "Văn bản",
+    "settings": "Cài đặt",
+    "banner": "Banner",
+    "audit": "Nhật ký",
+    "logout": "Đăng xuất",
+    "language": "Ngôn ngữ",
+    "more": "Thêm",
+    "owners": "Chủ điểm",
+    "acts": "Biên bản ảnh",
+    "documents": "Giấy tờ"
+  },
+  "navShort": {
+    "dashboard": "Tổng quan",
+    "bookings": "Đơn thuê",
+    "tracking": "Theo dõi",
+    "chess": "Lịch xe",
+    "owners": "Chủ điểm",
+    "acts": "Biên bản ảnh",
+    "documents": "Giấy tờ"
+  },
+  "roles": {
+    "ADMIN": "Quản trị viên",
+    "MANAGER": "Quản lý điểm",
+    "OWNER": "Chủ điểm"
+  },
+  "demo": {
+    "banner": "Dữ liệu demo — hãy thay thế",
+    "text": "Mẫu xe, giá và một số cài đặt vẫn là dữ liệu demo. Hãy thay trong Đội xe, Giá và Cài đặt.",
+    "tag": "DEMO",
+    "textOwner": "Mẫu xe, giá và xe của điểm bạn vẫn là dữ liệu mẫu. Hãy thay trong mục Đội xe và Giá."
+  },
+  "login": {
+    "title": "Đăng nhập quản trị",
+    "text": "Đăng nhập qua Telegram, không cần số điện thoại. Quản trị viên, chủ điểm và quản lý điểm có quyền truy cập.",
+    "notConfigured": "Chưa cấu hình đăng nhập Telegram: điền TELEGRAM_BOT_USERNAME và TELEGRAM_BOT_TOKEN vào .env và đăng ký tên miền với @BotFather (/setdomain).",
+    "devTitle": "Đăng nhập thử",
+    "devText": "Chỉ ở chế độ phát triển. Không có trong production.",
+    "devAdmin": "Vào với vai trò quản trị",
+    "devManager": "Vào với vai trò quản lý",
+    "failed": "Không đăng nhập được. Hãy thử lại.",
+    "forbidden": "Tài khoản này không có quyền quản trị. Hãy nhờ quản trị viên cấp quyền.",
+    "expired": "Phiên đã hết hạn. Hãy đăng nhập lại.",
+    "telegramDenied": "Tài khoản Telegram này không có quyền vào trang quản trị. Hãy nhờ quản trị viên cấp quyền.",
+    "telegramReopen": "Phiên đã kết thúc. Hãy đóng trang quản trị và mở lại từ bot.",
+    "devOwner": "Vào với vai trò chủ điểm",
+    "botButton": "Đăng nhập bằng Telegram",
+    "waiting": "Nhấn \"Xác nhận đăng nhập\" trong cuộc trò chuyện với bot. Trang này sẽ tự mở.",
+    "qrLabel": "Mã QR để đăng nhập qua bot",
+    "qrHint": "Telegram ở trên điện thoại? Quét mã này bằng camera rồi xác nhận trong bot.",
+    "otherWay": "Cách khác: nhập số điện thoại",
+    "widgetHint": "Telegram sẽ hỏi số điện thoại một lần.",
+    "retry": "Thử lại"
+  },
+  "common": {
+    "loading": "Đang tải",
+    "retry": "Thử lại",
+    "cancel": "Hủy",
+    "close": "Đóng",
+    "apply": "Áp dụng",
+    "reset": "Đặt lại",
+    "prev": "Trước",
+    "next": "Tiếp",
+    "page": "Trang {page}/{pages}",
+    "none": "—",
+    "errorTitle": "Không tải được"
+  },
+  "forbidden": {
+    "title": "Chỉ dành cho quản trị viên",
+    "text": "Quản lý không xem được giá, thanh toán và cài đặt. Hãy hỏi quản trị viên nếu cần.",
+    "ownerTitle": "Mục này không mở cho vai trò của bạn",
+    "ownerText": "Quản trị viên phụ trách mục này. Hãy liên hệ nếu bạn cần quyền truy cập."
+  },
+  "notFound": {
+    "title": "Không tìm thấy trang",
+    "text": "Liên kết đã cũ hoặc sai."
+  },
+  "stub": {
+    "title": "Mục {section} đang được xây dựng",
+    "text": "Tính năng quản lý mục này sẽ có trong bản cập nhật tới."
+  },
+  "dashboard": {
+    "title": "Tổng quan",
+    "today": "Hôm nay, {date}",
+    "issues": "Giao xe hôm nay",
+    "returns": "Trả xe hôm nay",
+    "load": "Công suất đội xe",
+    "loadHint": "{busy}/{total} xe bận hôm nay",
+    "unpaid": "Chờ thanh toán",
+    "revenue": "Doanh thu",
+    "revenueHint": "Tiền thuê, dịch vụ thêm, giao xe và phụ phí của đơn bắt đầu trong kỳ, không gồm đơn hủy và chưa thanh toán.",
+    "day": "Hôm nay",
+    "week": "Tuần này",
+    "month": "Tháng này",
+    "funnel": "Phễu {days} ngày qua",
+    "funnelSteps": {
+      "open": "Mở ứng dụng",
+      "dates_selected": "Chọn ngày",
+      "model_viewed": "Xem xe",
+      "checkout_opened": "Bắt đầu đặt",
+      "paid": "Đã thanh toán"
+    },
+    "ofOpens": "{pct}% lượt mở",
+    "sources": "Nguồn lượt mở",
+    "noSources": "Chưa có lượt mở nào có nguồn.",
+    "unpaidEmpty": "Không có đơn chưa thanh toán.",
+    "holdUntil": "giữ đến {time}",
+    "openChess": "Mở lịch xe"
+  },
+  "status": {
+    "PENDING_PAYMENT": "Chờ thanh toán",
+    "CONFIRMED": "Đã xác nhận",
+    "ISSUED": "Đã giao xe",
+    "COMPLETED": "Hoàn tất",
+    "CANCELLED_BY_CLIENT": "Khách đã hủy",
+    "CANCELLED_BY_SYSTEM": "Hệ thống đã hủy",
+    "PROBLEM": "Có sự cố"
+  },
+  "bookings": {
+    "title": "Đơn thuê",
+    "search": "Mã, số điện thoại hoặc tên",
+    "statusFilter": "Trạng thái",
+    "from": "Từ ngày",
+    "to": "đến",
+    "count": "{count} đơn",
+    "empty": "Chưa có đơn nào",
+    "emptyText": "Đơn từ ứng dụng và đơn tạo tay sẽ hiện ở đây.",
+    "emptyFiltered": "Không có đơn phù hợp",
+    "emptyFilteredText": "Đặt lại bộ lọc hoặc đổi ngày.",
+    "col": {
+      "code": "Mã",
+      "client": "Khách",
+      "bike": "Xe",
+      "period": "Thời gian",
+      "status": "Trạng thái",
+      "amount": "Số tiền"
+    },
+    "walkIn": "Khách vãng lai",
+    "new": "Tạo đơn",
+    "allStatuses": "Tất cả trạng thái"
+  },
+  "booking": {
+    "back": "Tất cả đơn",
+    "title": "Đơn {code}",
+    "client": "Khách",
+    "phone": "Điện thoại",
+    "bike": "Xe",
+    "period": "Thời gian",
+    "method": {
+      "VIETQR": "VietQR",
+      "CASH": "Tiền mặt",
+      "RUB_TRANSFER": "Chuyển khoản bằng rúp"
+    },
+    "payment": "Thanh toán",
+    "total": "Tiền thuê và dịch vụ",
+    "deposit": "Tiền cọc",
+    "paid": "Đã nhận",
+    "status": "Trạng thái",
+    "changeStatus": "Đổi trạng thái",
+    "newStatus": "Trạng thái mới",
+    "reason": "Lý do (ghi nhật ký)",
+    "applyStatus": "Đổi",
+    "noNextStatus": "Không thể chuyển từ trạng thái này.",
+    "statusChanged": "Đã đổi trạng thái",
+    "history": "Lịch sử trạng thái",
+    "system": "Hệ thống",
+    "payments": "Thanh toán",
+    "documents": "Giấy tờ của khách",
+    "acts": "Biên bản giao nhận",
+    "noHistory": "Chưa có thay đổi.",
+    "noPayments": "Chưa có thanh toán.",
+    "noDocuments": "Khách chưa tải giấy tờ.",
+    "noActs": "Chưa có biên bản giao hoặc nhận xe.",
+    "openDocument": "Mở",
+    "linkTtl": "Liên kết mở ở tab mới, hiệu lực 10 phút.",
+    "docType": {
+      "PASSPORT": "Hộ chiếu",
+      "LICENSE": "Bằng lái",
+      "IDP": "Bằng lái quốc tế"
+    },
+    "docStatus": {
+      "UPLOADED": "Đã tải",
+      "VERIFIED": "Đã xác minh",
+      "REJECTED": "Bị từ chối"
+    },
+    "actKind": {
+      "ISSUE": "Giao xe",
+      "RETURN": "Trả xe"
+    },
+    "actLine": "Số km {km} · xăng {fuel}%",
+    "actBy": "Bởi {name}",
+    "clientConfirmed": "Khách đã xác nhận",
+    "damages": "Hư hỏng: {text}",
+    "showPhotos": "Xem {count} ảnh",
+    "paymentKind": {
+      "RENT": "Tiền thuê",
+      "DEPOSIT": "Tiền cọc",
+      "PREPAYMENT": "Trả trước",
+      "SURCHARGE": "Phụ phí",
+      "REFUND": "Hoàn tiền"
+    },
+    "paymentStatus": {
+      "PENDING": "Đang chờ",
+      "PAID": "Đã trả",
+      "FAILED": "Lỗi",
+      "EXPIRED": "Hết hạn",
+      "CANCELLED": "Đã hủy"
+    },
+    "received": "đã nhận {amount}"
+  },
+  "chess": {
+    "title": "Lịch xe",
+    "prev": "Trước",
+    "next": "Sau",
+    "today": "Hôm nay",
+    "bike": "Xe",
+    "hint": "Kéo đơn sang xe khác cùng mẫu. Trên điện thoại, chạm vào đơn.",
+    "moved": "Đã chuyển đơn {code} sang {plate}",
+    "moveTitle": "Đơn {code}",
+    "moveTo": "Chuyển sang xe",
+    "move": "Chuyển",
+    "openBooking": "Mở đơn",
+    "noBikes": "Chưa có xe",
+    "noBikesText": "Thêm xe trong mục Đội xe.",
+    "repair": "Sửa chữa",
+    "retired": "Ngừng dùng",
+    "buffer": "đệm",
+    "addHere": "Tạo đơn trên {plate}",
+    "bar": "{code}, {client}, {status}"
+  },
+  "manual": {
+    "title": "Đơn tạo tay",
+    "text": "Cho khách vãng lai. Kiểm tra xe trống và quy định như trong ứng dụng.",
+    "model": "Mẫu xe",
+    "bike": "Xe",
+    "anyBike": "Xe trống bất kỳ",
+    "start": "Giao xe",
+    "end": "Trả xe",
+    "timeHint": "Giờ tại điểm ({tz})",
+    "phone": "Điện thoại khách",
+    "phoneHint": "Kèm mã quốc gia: +84…",
+    "name": "Tên khách",
+    "lang": "Ngôn ngữ của khách",
+    "method": "Thanh toán",
+    "submit": "Tạo đơn",
+    "created": "Đã tạo đơn {code}",
+    "invalidDates": "Chọn giờ giao và trả; giờ trả phải sau giờ giao."
+  },
+  "audit": {
+    "title": "Nhật ký hoạt động",
+    "empty": "Chưa có hoạt động",
+    "emptyText": "Thay đổi về đơn, thanh toán và giấy tờ sẽ hiện ở đây.",
+    "col": {
+      "at": "Thời điểm",
+      "actor": "Ai",
+      "action": "Hành động",
+      "entity": "Đối tượng",
+      "details": "Chi tiết"
+    },
+    "system": "Hệ thống"
+  },
+  "errors": {
+    "BIKE_TAKEN": "Xe đang bận: trùng với đơn {code} (tính cả thời gian đệm).",
+    "BIKE_TAKEN_ANY": "Không còn xe trống của mẫu này cho các ngày đã chọn.",
+    "BIKE_UNAVAILABLE": "Xe đang sửa hoặc đã ngừng dùng.",
+    "BIKE_MODEL_MISMATCH": "Chỉ có thể chuyển sang xe cùng mẫu.",
+    "BOOKING_CLOSED": "Không thể chuyển đơn đã hoàn tất hoặc đã hủy.",
+    "UNAUTHORIZED": "Phiên đã hết hạn. Hãy đăng nhập lại."
+  },
+  "point": {
+    "label": "Điểm",
+    "all": "Tất cả các điểm"
+  },
+  "acts": {
+    "meta": "Tình trạng xe trước và sau mỗi lần thuê. Tệp được bảo mật, việc xem được ghi nhật ký.",
+    "search": "Biển số hoặc mã đơn",
+    "empty": "Chưa có biên bản ảnh",
+    "emptyText": "Biên bản xuất hiện sau lần giao xe đầu tiên.",
+    "noAct": "Chưa có biên bản",
+    "before": "Trước khi thuê",
+    "after": "Sau khi thuê",
+    "prev": "Trước",
+    "next": "Tiếp"
+  },
+  "owners": {
+    "meta": "Số liệu và vi phạm của từng điểm trong tháng này. Nút này chuyển toàn bộ trang quản trị sang điểm đã chọn.",
+    "owner": "Chủ điểm: {names}",
+    "noOwner": "Chưa có chủ điểm",
+    "managers": "Quản lý: {names}",
+    "income": "Doanh thu",
+    "profit": "Lợi nhuận",
+    "bikes": "Số xe",
+    "rentals": "Đang cho thuê",
+    "overdue": "Quá hạn",
+    "openIncidents": "Không có xe: đang mở",
+    "recentIncidents": "Trường hợp trong {days} ngày",
+    "refunds": "Cần hoàn cho khách",
+    "outstanding": "Chưa nhận",
+    "noPhotos": "Không có biên bản ảnh",
+    "lastActivity": "Hoạt động gần nhất",
+    "never": "chưa bao giờ",
+    "openPoint": "Mở với vai trò chủ điểm",
+    "incidentsTitle": "Đang chờ quyết định: {count}",
+    "noAnswer": "điểm không phản hồi"
+  },
+  "incident": {
+    "title": "Không có xe tại điểm",
+    "open": "Đang mở, chờ quyết định",
+    "present": "Xe có tại điểm",
+    "cancel": "Hủy và hoàn toàn bộ tiền",
+    "cancelConfirm": "Hủy đơn và hoàn toàn bộ tiền cho khách?",
+    "source": {
+      "CLIENT": "khách báo",
+      "STAFF": "nhân viên báo",
+      "SYSTEM": "xe chưa được trả"
+    },
+    "resolution": {
+      "SAME_MODEL": "Đã giao xe khác cùng mẫu",
+      "BIKE_PRESENT": "Xe có tại điểm",
+      "REPLACED": "Khách đồng ý đổi xe",
+      "CANCELLED": "Đã hủy và hoàn toàn bộ tiền"
+    }
+  },
+  "documents": {
+    "meta": "Chờ kiểm tra: {count}",
+    "license": "Bằng lái: {category}",
+    "licenseName": {
+      "A1": "A1",
+      "A": "A",
+      "NONE": "không có"
+    },
+    "reason": "Lý do",
+    "reasonHint": "Khách sẽ thấy lý do trong bot. Ví dụ: không đọc được số.",
+    "rejectSend": "Từ chối và báo khách",
+    "verify": "Đã kiểm tra",
+    "reject": "Từ chối",
+    "empty": "Chưa có gì ở đây",
+    "saved": "Đã lưu quyết định"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "appName": "Thuê Xe Máy",
+  "nav": {
+    "label": "Mục",
+    "home": "Trang chủ",
+    "bookings": "Đặt xe của tôi",
+    "favorites": "Yêu thích",
+    "profile": "Hồ sơ"
+  },
+  "actions": {
+    "back": "Quay lại",
+    "close": "Đóng",
+    "retry": "Thử lại",
+    "toHome": "Về trang chủ"
+  },
+  "boot": {
+    "loading": "Đang tải",
+    "errorTitle": "Không mở được ứng dụng"
+  },
+  "outside": {
+    "title": "Mở qua bot",
+    "text": "Ứng dụng chạy trong Telegram. Mở bot và nhấn «Thuê xe».",
+    "action": "Mở bot"
+  },
+  "stub": {
+    "title": "Sắp ra mắt",
+    "text": "Màn hình này đang được hoàn thiện. Hãy quay về trang chủ."
+  },
+  "notFound": {
+    "title": "Không có trang này",
+    "text": "Liên kết đã cũ hoặc bị gõ sai."
+  },
+  "forbidden": {
+    "title": "Chỉ dành cho quản lý",
+    "text": "Nếu bạn làm việc tại điểm giao xe, hãy nhờ quản trị viên cấp quyền."
+  },
+  "dev": {
+    "banner": "Chế độ thử: {role}"
+  },
+  "languages": {
+    "ru": "Русский",
+    "en": "English",
+    "vi": "Tiếng Việt"
+  }
+}

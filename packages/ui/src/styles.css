@@ -1,0 +1,111 @@
+/* Общие стили Mini App и админки: токены, база, браузерные поверхности. Подключать до @tailwind. */
+@import './tokens.generated.css';
+
+:root {
+  /* Безопасные зоны Telegram (Bot API 8.0+) с запасным env() для браузера и старых клиентов. */
+  --safe-top: calc(var(--tg-safe-area-inset-top, 0px) + var(--tg-content-safe-area-inset-top, 0px));
+  --safe-bottom: max(
+    calc(var(--tg-safe-area-inset-bottom, 0px) + var(--tg-content-safe-area-inset-bottom, 0px)),
+    env(safe-area-inset-bottom, 0px)
+  );
+  --safe-left: max(var(--tg-safe-area-inset-left, 0px), env(safe-area-inset-left, 0px));
+  --safe-right: max(var(--tg-safe-area-inset-right, 0px), env(safe-area-inset-right, 0px));
+}
+
+html {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 22px;
+  font-weight: 500;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  background: var(--bg);
+  overscroll-behavior-y: none;
+}
+
+::selection {
+  background: var(--accent-soft);
+  color: var(--ink);
+}
+
+input,
+textarea {
+  caret-color: var(--accent);
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+/* Цифры цен, таймеров и календаря не прыгают. */
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--line-strong) transparent;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Перелив скелетона; при «уменьшить движение» — статичная заливка. */
+.ui-skeleton {
+  position: relative;
+  overflow: hidden;
+  background: var(--skeleton);
+}
+.ui-skeleton::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--bg) 45%, transparent), transparent);
+  animation: ui-shimmer 1.2s ease-in-out infinite;
+}
+@keyframes ui-shimmer {
+  to {
+    transform: translateX(100%);
+  }
+}
+
+/* Невидимое расширение зоны касания до 44 px у мелких контролов. */
+.hit-44 {
+  position: relative;
+}
+.hit-44::after {
+  content: '';
+  position: absolute;
+  inset: 50% auto auto 50%;
+  width: max(100%, 44px);
+  height: max(100%, 44px);
+  transform: translate(-50%, -50%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+  }
+  .ui-skeleton::after {
+    display: none;
+  }
+}

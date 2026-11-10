@@ -1,0 +1,94 @@
+{
+  "title": "Danh mục",
+  "search": {
+    "label": "Tìm xe",
+    "placeholder": "Tìm theo mẫu xe hoặc hãng"
+  },
+  "filters": {
+    "title": "Bộ lọc",
+    "open": "Mở bộ lọc",
+    "openCount": "Bộ lọc, đang bật: {count}",
+    "reset": "Đặt lại",
+    "show": "Xem {count} xe",
+    "showNone": "Không tìm thấy",
+    "showUnknown": "Xem xe",
+    "type": "Loại",
+    "cc": "Dung tích",
+    "price": "Giá mỗi ngày",
+    "priceRange": "{min} – {max}",
+    "priceFrom": "Từ",
+    "priceTo": "Đến",
+    "brand": "Hãng",
+    "options": "Tùy chọn",
+    "sort": "Sắp xếp",
+    "category": "Loại xe",
+    "point": "Điểm nhận xe",
+    "allPoints": "Tất cả các điểm"
+  },
+  "category": {
+    "ALL": "Tất cả",
+    "SCOOTER": "Xe ga 110–125",
+    "MAXI_SCOOTER": "Xe ga lớn 150+",
+    "SEMI_AUTO": "Xe số bán tự động",
+    "MOTORCYCLE": "Mô tô",
+    "ELECTRIC": "Xe điện"
+  },
+  "type": {
+    "AUTOMATIC": "Tự động",
+    "SEMI_AUTO": "Bán tự động",
+    "MANUAL": "Số tay",
+    "ELECTRIC": "Điện"
+  },
+  "cc": {
+    "50": "đến 50 cc",
+    "110-125": "110–125 cc",
+    "150-160": "150–160 cc",
+    "300+": "300+ cc"
+  },
+  "feature": {
+    "TRUNK": "Cốp xe",
+    "USB": "Sạc USB",
+    "ABS": "ABS",
+    "SMART_KEY": "Smart Key"
+  },
+  "sort": {
+    "price_asc": "Giá thấp đến cao",
+    "price_desc": "Giá cao đến thấp",
+    "rating": "Đánh giá cao",
+    "popularity": "Phổ biến nhất"
+  },
+  "card": {
+    "cc": "{cc} cc",
+    "electric": "Điện",
+    "favoriteAdd": "Thêm vào yêu thích: {name}",
+    "favoriteRemove": "Bỏ khỏi yêu thích: {name}",
+    "ratingLabel": "Đánh giá {rating}, số nhận xét: {count}",
+    "perDay": "/ngày",
+    "total": "{price} cho {days} ngày",
+    "busyUntil": "Đã thuê đến {date}",
+    "busy": "Đã thuê trong ngày này",
+    "book": "Đặt xe",
+    "needLicense": "Cần bằng lái"
+  },
+  "dates": {
+    "pick": "Chọn ngày"
+  },
+  "count": "Tìm thấy {count} xe",
+  "error": {
+    "title": "Không tải được danh sách xe",
+    "text": "Kiểm tra kết nối và thử lại."
+  },
+  "empty": {
+    "none": {
+      "title": "Không tìm thấy gì",
+      "text": "Thử bỏ bớt điều kiện.",
+      "action": "Đặt lại bộ lọc",
+      "pickDates": "Chọn ngày"
+    },
+    "busy": {
+      "title": "Tất cả xe đã được thuê vào {period}",
+      "text": "Dời ngày, chúng tôi sẽ hiển thị xe còn trống.",
+      "action": "Dời ngày"
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "title": "Bạn cần xe khi nào?",
+  "clear": "Xóa ngày",
+  "pickInCalendar": "Chọn trên lịch",
+  "quick": {
+    "label": "Chọn nhanh ngày",
+    "today": "Hôm nay",
+    "tomorrow": "Ngày mai",
+    "days3": "3 ngày",
+    "week": "Tuần",
+    "month": "Tháng"
+  },
+  "apply": {
+    "model": "Xong",
+    "catalog": "Xem xe",
+    "sheet": "Xong",
+    "pending": "Hãy chọn ngày"
+  },
+  "month": {
+    "prev": "Tháng trước",
+    "next": "Tháng sau"
+  },
+  "weekdays": {
+    "mon": "T2",
+    "tue": "T3",
+    "wed": "T4",
+    "thu": "T5",
+    "fri": "T6",
+    "sat": "T7",
+    "sun": "CN"
+  },
+  "day": {
+    "busy": "đã có người thuê",
+    "past": "không khả dụng",
+    "start": "nhận xe",
+    "end": "trả xe"
+  },
+  "legend": {
+    "busy": "Ngày bị gạch đã có người thuê."
+  },
+  "time": {
+    "start": "Giờ nhận xe",
+    "end": "Giờ trả xe"
+  },
+  "summary": {
+    "days": "{days} ngày"
+  },
+  "hint": {
+    "start": "Chạm vào ngày nhận xe",
+    "end": "Giờ hãy chạm vào ngày trả xe"
+  }
+}

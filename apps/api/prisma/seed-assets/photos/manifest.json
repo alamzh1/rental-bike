@@ -1,0 +1,323 @@
+{
+  "demo": true,
+  "models": {
+    "honda-air-blade-125": [
+      {
+        "view": "front34",
+        "sizes": {
+          "400": {
+            "webp": "honda-air-blade-125/front34-400.webp",
+            "avif": "honda-air-blade-125/front34-400.avif"
+          },
+          "800": {
+            "webp": "honda-air-blade-125/front34-800.webp",
+            "avif": "honda-air-blade-125/front34-800.avif"
+          },
+          "1200": {
+            "webp": "honda-air-blade-125/front34-1200.webp",
+            "avif": "honda-air-blade-125/front34-1200.avif"
+          }
+        }
+      },
+      {
+        "view": "side",
+        "sizes": {
+          "400": {
+            "webp": "honda-air-blade-125/side-400.webp",
+            "avif": "honda-air-blade-125/side-400.avif"
+          },
+          "800": {
+            "webp": "honda-air-blade-125/side-800.webp",
+            "avif": "honda-air-blade-125/side-800.avif"
+          },
+          "1200": {
+            "webp": "honda-air-blade-125/side-1200.webp",
+            "avif": "honda-air-blade-125/side-1200.avif"
+          }
+        }
+      },
+      {
+        "view": "rear34",
+        "sizes": {
+          "400": {
+            "webp": "honda-air-blade-125/rear34-400.webp",
+            "avif": "honda-air-blade-125/rear34-400.avif"
+          },
+          "800": {
+            "webp": "honda-air-blade-125/rear34-800.webp",
+            "avif": "honda-air-blade-125/rear34-800.avif"
+          },
+          "1200": {
+            "webp": "honda-air-blade-125/rear34-1200.webp",
+            "avif": "honda-air-blade-125/rear34-1200.avif"
+          }
+        }
+      }
+    ],
+    "honda-vario-160": [
+      {
+        "view": "front34",
+        "sizes": {
+          "400": {
+            "webp": "honda-vario-160/front34-400.webp",
+            "avif": "honda-vario-160/front34-400.avif"
+          },
+          "800": {
+            "webp": "honda-vario-160/front34-800.webp",
+            "avif": "honda-vario-160/front34-800.avif"
+          },
+          "1200": {
+            "webp": "honda-vario-160/front34-1200.webp",
+            "avif": "honda-vario-160/front34-1200.avif"
+          }
+        }
+      },
+      {
+        "view": "side",
+        "sizes": {
+          "400": {
+            "webp": "honda-vario-160/side-400.webp",
+            "avif": "honda-vario-160/side-400.avif"
+          },
+          "800": {
+            "webp": "honda-vario-160/side-800.webp",
+            "avif": "honda-vario-160/side-800.avif"
+          },
+          "1200": {
+            "webp": "honda-vario-160/side-1200.webp",
+            "avif": "honda-vario-160/side-1200.avif"
+          }
+        }
+      },
+      {
+        "view": "rear34",
+        "sizes": {
+          "400": {
+            "webp": "honda-vario-160/rear34-400.webp",
+            "avif": "honda-vario-160/rear34-400.avif"
+          },
+          "800": {
+            "webp": "honda-vario-160/rear34-800.webp",
+            "avif": "honda-vario-160/rear34-800.avif"
+          },
+          "1200": {
+            "webp": "honda-vario-160/rear34-1200.webp",
+            "avif": "honda-vario-160/rear34-1200.avif"
+          }
+        }
+      }
+    ],
+    "honda-vision-110": [
+      {
+        "view": "front34",
+        "sizes": {
+          "400": {
+            "webp": "honda-vision-110/front34-400.webp",
+            "avif": "honda-vision-110/front34-400.avif"
+          },
+          "800": {
+            "webp": "honda-vision-110/front34-800.webp",
+            "avif": "honda-vision-110/front34-800.avif"
+          },
+          "1200": {
+            "webp": "honda-vision-110/front34-1200.webp",
+            "avif": "honda-vision-110/front34-1200.avif"
+          }
+        }
+      },
+      {
+        "view": "side",
+        "sizes": {
+          "400": {
+            "webp": "honda-vision-110/side-400.webp",
+            "avif": "honda-vision-110/side-400.avif"
+          },
+          "800": {
+            "webp": "honda-vision-110/side-800.webp",
+            "avif": "honda-vision-110/side-800.avif"
+          },
+          "1200": {
+            "webp": "honda-vision-110/side-1200.webp",
+            "avif": "honda-vision-110/side-1200.avif"
+          }
+        }
+      },
+      {
+        "view": "rear34",
+        "sizes": {
+          "400": {
+            "webp": "honda-vision-110/rear34-400.webp",
+            "avif": "honda-vision-110/rear34-400.avif"
+          },
+          "800": {
+            "webp": "honda-vision-110/rear34-800.webp",
+            "avif": "honda-vision-110/rear34-800.avif"
+          },
+          "1200": {
+            "webp": "honda-vision-110/rear34-1200.webp",
+            "avif": "honda-vision-110/rear34-1200.avif"
+          }
+        }
+      }
+    ],
+    "vinfast-evo200": [
+      {
+        "view": "front34",
+        "sizes": {
+          "400": {
+            "webp": "vinfast-evo200/front34-400.webp",
+            "avif": "vinfast-evo200/front34-400.avif"
+          },
+          "800": {
+            "webp": "vinfast-evo200/front34-800.webp",
+            "avif": "vinfast-evo200/front34-800.avif"
+          },
+          "1200": {
+            "webp": "vinfast-evo200/front34-1200.webp",
+            "avif": "vinfast-evo200/front34-1200.avif"
+          }
+        }
+      },
+      {
+        "view": "side",
+        "sizes": {
+          "400": {
+            "webp": "vinfast-evo200/side-400.webp",
+            "avif": "vinfast-evo200/side-400.avif"
+          },
+          "800": {
+            "webp": "vinfast-evo200/side-800.webp",
+            "avif": "vinfast-evo200/side-800.avif"
+          },
+          "1200": {
+            "webp": "vinfast-evo200/side-1200.webp",
+            "avif": "vinfast-evo200/side-1200.avif"
+          }
+        }
+      },
+      {
+        "view": "rear34",
+        "sizes": {
+          "400": {
+            "webp": "vinfast-evo200/rear34-400.webp",
+            "avif": "vinfast-evo200/rear34-400.avif"
+          },
+          "800": {
+            "webp": "vinfast-evo200/rear34-800.webp",
+            "avif": "vinfast-evo200/rear34-800.avif"
+          },
+          "1200": {
+            "webp": "vinfast-evo200/rear34-1200.webp",
+            "avif": "vinfast-evo200/rear34-1200.avif"
+          }
+        }
+      }
+    ],
+    "yamaha-janus-125": [
+      {
+        "view": "front34",
+        "sizes": {
+          "400": {
+            "webp": "yamaha-janus-125/front34-400.webp",
+            "avif": "yamaha-janus-125/front34-400.avif"
+          },
+          "800": {
+            "webp": "yamaha-janus-125/front34-800.webp",
+            "avif": "yamaha-janus-125/front34-800.avif"
+          },
+          "1200": {
+            "webp": "yamaha-janus-125/front34-1200.webp",
+            "avif": "yamaha-janus-125/front34-1200.avif"
+          }
+        }
+      },
+      {
+        "view": "side",
+        "sizes": {
+          "400": {
+            "webp": "yamaha-janus-125/side-400.webp",
+            "avif": "yamaha-janus-125/side-400.avif"
+          },
+          "800": {
+            "webp": "yamaha-janus-125/side-800.webp",
+            "avif": "yamaha-janus-125/side-800.avif"
+          },
+          "1200": {
+            "webp": "yamaha-janus-125/side-1200.webp",
+            "avif": "yamaha-janus-125/side-1200.avif"
+          }
+        }
+      },
+      {
+        "view": "rear34",
+        "sizes": {
+          "400": {
+            "webp": "yamaha-janus-125/rear34-400.webp",
+            "avif": "yamaha-janus-125/rear34-400.avif"
+          },
+          "800": {
+            "webp": "yamaha-janus-125/rear34-800.webp",
+            "avif": "yamaha-janus-125/rear34-800.avif"
+          },
+          "1200": {
+            "webp": "yamaha-janus-125/rear34-1200.webp",
+            "avif": "yamaha-janus-125/rear34-1200.avif"
+          }
+        }
+      }
+    ],
+    "yamaha-nvx-155": [
+      {
+        "view": "front34",
+        "sizes": {
+          "400": {
+            "webp": "yamaha-nvx-155/front34-400.webp",
+            "avif": "yamaha-nvx-155/front34-400.avif"
+          },
+          "800": {
+            "webp": "yamaha-nvx-155/front34-800.webp",
+            "avif": "yamaha-nvx-155/front34-800.avif"
+          },
+          "1200": {
+            "webp": "yamaha-nvx-155/front34-1200.webp",
+            "avif": "yamaha-nvx-155/front34-1200.avif"
+          }
+        }
+      },
+      {
+        "view": "side",
+        "sizes": {
+          "400": {
+            "webp": "yamaha-nvx-155/side-400.webp",
+            "avif": "yamaha-nvx-155/side-400.avif"
+          },
+          "800": {
+            "webp": "yamaha-nvx-155/side-800.webp",
+            "avif": "yamaha-nvx-155/side-800.avif"
+          },
+          "1200": {
+            "webp": "yamaha-nvx-155/side-1200.webp",
+            "avif": "yamaha-nvx-155/side-1200.avif"
+          }
+        }
+      },
+      {
+        "view": "rear34",
+        "sizes": {
+          "400": {
+            "webp": "yamaha-nvx-155/rear34-400.webp",
+            "avif": "yamaha-nvx-155/rear34-400.avif"
+          },
+          "800": {
+            "webp": "yamaha-nvx-155/rear34-800.webp",
+            "avif": "yamaha-nvx-155/rear34-800.avif"
+          },
+          "1200": {
+            "webp": "yamaha-nvx-155/rear34-1200.webp",
+            "avif": "yamaha-nvx-155/rear34-1200.avif"
+          }
+        }
+      }
+    ]
+  }
+}

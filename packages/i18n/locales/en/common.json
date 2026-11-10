@@ -1,0 +1,45 @@
+{
+  "appName": "Bike Rental",
+  "nav": {
+    "label": "Sections",
+    "home": "Home",
+    "bookings": "My bookings",
+    "favorites": "Favorites",
+    "profile": "Profile"
+  },
+  "actions": {
+    "back": "Back",
+    "close": "Close",
+    "retry": "Try again",
+    "toHome": "Go to Home"
+  },
+  "boot": {
+    "loading": "Loading",
+    "errorTitle": "Couldn't open the app"
+  },
+  "outside": {
+    "title": "Open it via the bot",
+    "text": "The app works inside Telegram. Open the bot and tap “Rent a bike”.",
+    "action": "Open the bot"
+  },
+  "stub": {
+    "title": "Coming soon",
+    "text": "This screen is still being built. Head back to Home."
+  },
+  "notFound": {
+    "title": "This page doesn't exist",
+    "text": "The link is outdated or has a typo."
+  },
+  "forbidden": {
+    "title": "For managers only",
+    "text": "If you work at the pickup point, ask the admin for access."
+  },
+  "dev": {
+    "banner": "Test mode: {role}"
+  },
+  "languages": {
+    "ru": "Русский",
+    "en": "English",
+    "vi": "Tiếng Việt"
+  }
+}

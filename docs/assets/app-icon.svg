@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Аренда Байка">
+  <rect width="512" height="512" fill="#0a5cff"/>
+  <!-- передний щит, площадка для ног, руль -->
+  <g fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M326 126 372 340" stroke-width="36"/>
+    <path d="M226 322H344" stroke-width="40"/>
+    <path d="M326 126 264 112" stroke-width="28"/>
+  </g>
+  <g fill="#ffffff">
+    <!-- заднее крыло и сиденье -->
+    <path d="M70 318c2-62 50-98 112-98h74v120h-44c-6-40-36-66-74-66-26 0-50 14-68 44z"/>
+    <rect x="96" y="172" width="156" height="38" rx="19"/>
+    <!-- фара -->
+    <circle cx="362" cy="166" r="22"/>
+  </g>
+  <!-- колёса с зазором от корпуса -->
+  <g fill="#ffffff" stroke="#0a5cff" stroke-width="14">
+    <circle cx="136" cy="372" r="58"/>
+    <circle cx="384" cy="372" r="58"/>
+  </g>
+  <g fill="#0a5cff">
+    <circle cx="136" cy="372" r="20"/>
+    <circle cx="384" cy="372" r="20"/>
+  </g>
+</svg>

@@ -1,0 +1,37 @@
+{
+  "greeting": "Hi, {name}!",
+  "greetingAnon": "Hi!",
+  "pickup": "Pick-up: {name}, {address}",
+  "search": {
+    "label": "Search bikes",
+    "placeholder": "Search by model or brand"
+  },
+  "filters": "Filters",
+  "now": {
+    "title": "Need a bike now",
+    "text": "We show bikes you can pick up within the hour, for one day.",
+    "action": "Find a bike",
+    "error": "Could not find bikes. Please try again.",
+    "listTitle": "Free in the next 2 hours",
+    "listText": "Pick a bike: dates are already set, pickup soon, for one day.",
+    "quick": {
+      "title": "One-step payment",
+      "agree": "By tapping “Pay” you accept the",
+      "rules": "rental rules",
+      "pay": "I agree, pay · {amount}"
+    }
+  },
+  "error": {
+    "title": "Could not load the home screen",
+    "text": "Check your connection and try again."
+  },
+  "brands": "Brands",
+  "popular": "Popular",
+  "all": "All bikes",
+  "more": "{count, plural, one {See all: # bike} other {See all: # bikes}}",
+  "empty": {
+    "title": "No bikes yet",
+    "text": "Open the catalog or pick another category.",
+    "action": "Open catalog"
+  }
+}

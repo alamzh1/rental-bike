@@ -1,0 +1,65 @@
+{
+  "error": {
+    "title": "Không mở được xe này",
+    "text": "Kiểm tra kết nối hoặc quay lại danh mục."
+  },
+  "gallery": {
+    "label": "Ảnh: {name}",
+    "slide": "Ảnh {n} trên {total}"
+  },
+  "reviews": "({count} đánh giá)",
+  "demo": "DEMO",
+  "license": {
+    "badge": "Cần bằng lái",
+    "warning": "Không có bằng lái chỉ được thuê xe đến 50 cm³. Với xe này, hãy chọn hạng bằng và tải bằng lái khi đặt xe, hoặc chọn xe khác."
+  },
+  "dates": {
+    "none": "Chọn ngày",
+    "busyUntil": "Đã thuê đến {date}",
+    "busy": "Đã thuê trong ngày này"
+  },
+  "spec": {
+    "title": "Thông số",
+    "cc": "Dung tích",
+    "ccValue": "{cc} cc",
+    "electric": "Điện",
+    "transmission": "Hộp số",
+    "fuel": "Mức tiêu thụ",
+    "fuelValue": "{value} l/100 km",
+    "tank": "Bình xăng",
+    "tankValue": "{value} l",
+    "speed": "Tốc độ tối đa",
+    "speedValue": "{value} km/h",
+    "seats": "Chỗ ngồi",
+    "seatsValue": "{count} người"
+  },
+  "about": "Về chiếc xe",
+  "tariff": {
+    "title": "Giá mỗi ngày",
+    "day": "1 ngày",
+    "month": "Tháng",
+    "from": "Từ {days} ngày"
+  },
+  "included": "Đã bao gồm",
+  "conditions": "Điều kiện",
+  "deposit": "Tiền cọc",
+  "depositDocument": "Giấy tờ thay tiền cọc",
+  "pickup": "Nhận xe",
+  "action": {
+    "pickDates": "Chọn ngày",
+    "busy": "Không có xe vào ngày này",
+    "book": "Đặt xe · {price}",
+    "changeDates": "Đổi ngày"
+  },
+  "ratingDemo": "demo",
+  "docs": {
+    "title": "Giấy tờ cần có",
+    "passport": "Hộ chiếu",
+    "license": "Giấy phép lái xe",
+    "idp": "Giấy phép lái xe quốc tế (Công ước Viên 1968)"
+  },
+  "restrictions": {
+    "title": "Giới hạn",
+    "placeholder": "[GIỚI HẠN QUÃNG ĐƯỜNG VÀ DI CHUYỂN GIỮA CÁC TỈNH — điền trong cài đặt quản trị]"
+  }
+}

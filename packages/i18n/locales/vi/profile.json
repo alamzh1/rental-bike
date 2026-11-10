@@ -1,0 +1,69 @@
+{
+  "manager": {
+    "title": "Chế độ quản lý"
+  },
+  "documents": {
+    "title": "Giấy tờ",
+    "intro": "Không có ảnh hộ chiếu và bằng lái thì không đặt xe được. Khi giao xe, quản lý sẽ đối chiếu bản gốc.",
+    "error": "Không tải được giấy tờ",
+    "status": {
+      "NONE": "Chưa tải lên",
+      "PENDING": "Đang kiểm tra",
+      "VERIFIED": "Đã xác minh",
+      "REJECTED": "Bị từ chối"
+    },
+    "type": {
+      "PASSPORT": "Hộ chiếu",
+      "LICENSE": "Bằng lái xe",
+      "IDP": "Giấy phép lái xe quốc tế (IDP)"
+    },
+    "docStatus": {
+      "NONE": "Chưa tải lên",
+      "UPLOADED": "Đã tải lên",
+      "VERIFIED": "Đã xác minh",
+      "REJECTED": "Bị từ chối"
+    },
+    "upload": "Tải lên",
+    "replace": "Thay thế",
+    "consent": "Tôi đồng ý cho xử lý dữ liệu cá nhân để xác minh giấy tờ khi thuê xe.",
+    "retention": "Tệp được lưu trong kho riêng tư, chỉ nhân viên cho thuê xe mới xem được.",
+    "consentFirst": "Hãy đánh dấu đồng ý ở trên trước.",
+    "slot": {
+      "progress": "Đã tải {done}/{total}",
+      "ready": "Giấy tờ đã đủ",
+      "required": "Bắt buộc",
+      "optional": "Không bắt buộc",
+      "upload": "Tải ảnh lên",
+      "viaIdp": "Không cần: đã có bằng lái quốc tế",
+      "rejected": "Bị từ chối, hãy tải ảnh mới",
+      "hint": {
+        "PASSPORT": "Trang có ảnh, đọc rõ mọi thông tin",
+        "LICENSE": "Mặt trước. Bằng lái quốc tế cũng được",
+        "IDP": "Nếu bạn có bằng lái quốc tế"
+      }
+    }
+  },
+  "language": {
+    "title": "Ngôn ngữ"
+  },
+  "currency": {
+    "title": "Đơn vị tiền tệ",
+    "VND": "₫ VND",
+    "RUB": "₽ RUB",
+    "USD": "$ USD",
+    "note": "Bạn luôn thanh toán bằng đồng; các tiền tệ khác chỉ để tham khảo."
+  },
+  "timezone": {
+    "title": "Múi giờ",
+    "note": "Giờ thuê hiển thị theo múi giờ của điểm nhận xe."
+  },
+  "help": {
+    "title": "Trợ giúp",
+    "faq": "Hỏi đáp",
+    "rules": "Quy định thuê xe",
+    "privacy": "Chính sách bảo mật",
+    "support": "Hỗ trợ",
+    "supportPlaceholder": "[LIÊN HỆ HỖ TRỢ — nhập trong cài đặt admin]",
+    "placeholder": "[NỘI DUNG — nhập trong cài đặt admin]"
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "title": "Đặt xe",
+  "changeDates": "Đổi",
+  "days": "{days} ngày thuê",
+  "noDates": {
+    "title": "Hãy chọn ngày trước",
+    "text": "Chưa có ngày thì chưa tính được giá và tìm xe trống.",
+    "action": "Chọn ngày"
+  },
+  "error": {
+    "title": "Không mở được trang đặt xe"
+  },
+  "handover": {
+    "title": "Nhận xe",
+    "pickup": "Tự đến lấy",
+    "delivery": "Giao đến khách sạn",
+    "address": "Địa chỉ giao xe",
+    "addressPlaceholder": "Khách sạn, đường, số nhà",
+    "fee": "Phí giao xe: {fee}",
+    "map": "Bản đồ giao xe",
+    "mapHint": "Chạm vào bản đồ hoặc kéo ghim để chọn điểm giao."
+  },
+  "extras": {
+    "title": "Tùy chọn thêm",
+    "perDay": "mỗi ngày",
+    "once": "một lần",
+    "less": "Giảm: {name}",
+    "more": "Tăng: {name}"
+  },
+  "contact": {
+    "title": "Liên hệ",
+    "phone": "Số điện thoại",
+    "hint": "Quản lý sẽ gọi hoặc nhắn nếu có thay đổi.",
+    "share": "Lấy số từ Telegram",
+    "invalid": "Kiểm tra lại số: dùng dạng +84 912 345 678",
+    "required": "Nhập số điện thoại để chúng tôi liên hệ",
+    "sentNoPhone": "Đã gửi liên hệ cho bot. Hãy nhập số vào đây để gắn với đơn đặt."
+  },
+  "docs": {
+    "title": "Giấy tờ và bằng lái",
+    "category": "Hạng bằng lái",
+    "license": {
+      "A1": "A1",
+      "A": "A",
+      "NONE": "Không có bằng (đến 50 cm³)"
+    },
+    "warning": "Tại Việt Nam cần bằng lái hạng A1 (xe đến 125 cc) hoặc hạng A (từ 150 cc). Giấy phép lái xe quốc tế (IDP) chỉ được chấp nhận theo Công ước Viên 1968; IDP theo Công ước Geneva 1949 không được chấp nhận. Mức phạt năm 2026 khi lái xe không có bằng hợp lệ là 2–4 triệu ₫. Quản lý kiểm tra bản gốc khi giao xe.",
+    "lead": "Cần ảnh hộ chiếu và bằng lái trước: không có ảnh thì không đặt xe được."
+  },
+  "method": {
+    "title": "Cách thanh toán",
+    "vietqr": "VietQR",
+    "cash": "Tiền mặt khi nhận xe",
+    "vietqrNote": "Thanh toán bằng QR trong app ngân hàng. Trạng thái tự cập nhật.",
+    "cashNote": "Đơn được xác nhận ngay, bạn trả tiền cho quản lý khi nhận xe.",
+    "cashPrepayNote": "Trả trước {percent}%, phần còn lại trả cho quản lý khi nhận xe.",
+    "rub": "Rúp, SBP",
+    "rubNote": "Chuyển tiền thuê bằng rúp qua số điện thoại từ ứng dụng ngân hàng. Tiền cọc trả bằng tiền mặt khi nhận xe. Đơn được xác nhận ngay khi chúng tôi nhận được tiền."
+  },
+  "breakdown": {
+    "title": "Chi phí",
+    "rent": "Thuê xe, {days} ngày",
+    "extras": "Tùy chọn thêm",
+    "delivery": "Giao xe",
+    "total": "Tổng tiền thuê",
+    "deposit": "Tiền cọc",
+    "depositNote": "Tiền cọc không tính vào giá thuê và được hoàn lại khi trả xe nguyên vẹn.",
+    "payNow": "Thanh toán ngay",
+    "payAtPickup": "Thanh toán khi nhận xe",
+    "depositCashNote": "Tiền cọc trả cho quản lý bằng tiền mặt khi nhận xe và được hoàn lại bằng tiền mặt khi trả xe nguyên vẹn."
+  },
+  "consent": {
+    "text": "Tôi đồng ý với",
+    "rules": "quy định thuê xe"
+  },
+  "blocked": {
+    "license": "Không có bằng lái chỉ được thuê xe đến 50 cm³",
+    "documents": "Hãy tải ảnh giấy tờ, không có ảnh thì không đặt xe được. Xem ngay",
+    "consent": "Hãy đồng ý với quy định để tiếp tục",
+    "phone": "Nhập số điện thoại dạng +84 912 345 678",
+    "address": "Nhập địa chỉ giao xe"
+  },
+  "cta": {
+    "pay": "Thanh toán {amount}",
+    "book": "Đặt xe"
+  },
+  "taken": {
+    "text": "Xe vừa có người đặt. Hãy chọn xe khác cho các ngày này hoặc đổi ngày.",
+    "other": "Xe khác cho các ngày này",
+    "dates": "Đổi ngày"
+  }
+}

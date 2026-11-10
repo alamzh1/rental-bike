@@ -1,0 +1,36 @@
+{
+  "title": "Payment",
+  "qr": {
+    "label": "VietQR payment code"
+  },
+  "transfer": "Payment reference: {code}",
+  "timer": "Booking held for",
+  "openBank": "Open bank app",
+  "waiting": "Waiting for payment. This screen updates by itself.",
+  "devPay": "Test: pay as the customer",
+  "error": {
+    "title": "Couldn’t open the payment"
+  },
+  "expired": {
+    "title": "Payment time ran out",
+    "text": "The hold was released and the bike is available to others again. Book again, it only takes a minute.",
+    "action": "Back to catalogue"
+  },
+  "toBookings": "My bookings",
+  "rub": {
+    "title": "Transfer in rubles",
+    "equals": "This is {vnd} at the locked rate",
+    "steps": "Open your bank's app, choose a transfer by phone number (SBP) and send the exact amount. Tap a row to copy it.",
+    "phone": "Phone",
+    "bank": "Bank",
+    "recipient": "Recipient",
+    "amount": "Amount",
+    "comment": "Transfer comment",
+    "copy": "Copy: {label}",
+    "claim": "I've sent it",
+    "note": "Tap only after you've sent the money. An administrator checks it by hand, and we hold the bike for up to 6 hours.",
+    "checkingTitle": "Checking your transfer",
+    "checkingText": "Once an administrator sees the money, the booking confirms automatically and the bot will message you.",
+    "depositCash": "Deposit {amount}: in cash at pick-up"
+  }
+}

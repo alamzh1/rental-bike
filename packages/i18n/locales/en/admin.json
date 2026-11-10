@@ -1,0 +1,353 @@
+{
+  "appName": "Rental admin",
+  "skipToContent": "Skip to content",
+  "nav": {
+    "label": "Sections",
+    "dashboard": "Overview",
+    "bookings": "Bookings",
+    "chess": "Fleet calendar",
+    "tracking": "Tracking",
+    "fleet": "Fleet",
+    "finance": "Finance",
+    "prices": "Prices",
+    "locations": "Locations",
+    "payments": "Payments",
+    "texts": "Texts",
+    "settings": "Settings",
+    "banner": "Banner",
+    "audit": "Activity log",
+    "logout": "Log out",
+    "language": "Language",
+    "more": "More",
+    "owners": "Owners",
+    "acts": "Photo acts",
+    "documents": "Documents"
+  },
+  "navShort": {
+    "dashboard": "Overview",
+    "bookings": "Bookings",
+    "tracking": "Bikes",
+    "chess": "Calendar",
+    "owners": "Owners",
+    "acts": "Photo acts",
+    "documents": "Documents"
+  },
+  "roles": {
+    "ADMIN": "Administrator",
+    "MANAGER": "Location manager",
+    "OWNER": "Location owner"
+  },
+  "demo": {
+    "banner": "Demo data — replace it",
+    "text": "Models, prices and some settings are still demo values. Replace them under Fleet, Prices and Settings.",
+    "tag": "DEMO",
+    "textOwner": "Models, prices and bikes of your location are still demo data. Replace them in Fleet and Prices."
+  },
+  "login": {
+    "title": "Sign in to admin",
+    "text": "Sign in through Telegram without a phone number. Access is for administrators, location owners and managers.",
+    "notConfigured": "Telegram login is not configured: set TELEGRAM_BOT_USERNAME and TELEGRAM_BOT_TOKEN in .env and register the admin domain with @BotFather (/setdomain).",
+    "devTitle": "Test sign-in",
+    "devText": "Development mode only. These buttons don't exist in production.",
+    "devAdmin": "Sign in as administrator",
+    "devManager": "Sign in as manager",
+    "failed": "Couldn't sign in. Try again.",
+    "forbidden": "This account has no admin access. Ask an administrator to grant a role.",
+    "expired": "Your session has ended. Sign in again.",
+    "telegramDenied": "This Telegram account has no access to the admin panel. Ask an administrator to grant a role.",
+    "telegramReopen": "Your session has ended. Close the admin panel and open it again from the bot.",
+    "devOwner": "Sign in as owner",
+    "botButton": "Sign in with Telegram",
+    "waiting": "Tap \"Confirm sign-in\" in the bot chat. This page will open by itself.",
+    "qrLabel": "QR code to sign in through the bot",
+    "qrHint": "Telegram on your phone? Scan this code with the camera and confirm in the bot.",
+    "otherWay": "Another way: enter a phone number",
+    "widgetHint": "Telegram will ask for your phone number once.",
+    "retry": "Try again"
+  },
+  "common": {
+    "loading": "Loading",
+    "retry": "Retry",
+    "cancel": "Cancel",
+    "close": "Close",
+    "apply": "Apply",
+    "reset": "Reset",
+    "prev": "Previous",
+    "next": "Next",
+    "page": "Page {page} of {pages}",
+    "none": "—",
+    "errorTitle": "Couldn't load"
+  },
+  "forbidden": {
+    "title": "Administrators only",
+    "text": "Prices, payments and settings aren't available to managers. Ask an administrator if you need access.",
+    "ownerTitle": "This section is closed for your role",
+    "ownerText": "An administrator runs this section. Ask them if you need access."
+  },
+  "notFound": {
+    "title": "Page not found",
+    "text": "The link is outdated or mistyped."
+  },
+  "stub": {
+    "title": "The {section} section is being built",
+    "text": "Managing this section arrives in the next admin update."
+  },
+  "dashboard": {
+    "title": "Overview",
+    "today": "Today, {date}",
+    "issues": "Pickups today",
+    "returns": "Returns today",
+    "load": "Fleet utilisation",
+    "loadHint": "{busy} of {total} bikes busy today",
+    "unpaid": "Awaiting payment",
+    "revenue": "Revenue",
+    "revenueHint": "Rent, extras, delivery and late fees for bookings starting in the period, excluding cancelled and unpaid.",
+    "day": "Today",
+    "week": "This week",
+    "month": "This month",
+    "funnel": "Funnel, last {days} days",
+    "funnelSteps": {
+      "open": "Opened the app",
+      "dates_selected": "Picked dates",
+      "model_viewed": "Viewed a bike",
+      "checkout_opened": "Started checkout",
+      "paid": "Paid"
+    },
+    "ofOpens": "{pct}% of opens",
+    "sources": "Where opens came from",
+    "noSources": "No opens with a source tag yet.",
+    "unpaidEmpty": "No unpaid bookings.",
+    "holdUntil": "held until {time}",
+    "openChess": "Open fleet calendar"
+  },
+  "status": {
+    "PENDING_PAYMENT": "Awaiting payment",
+    "CONFIRMED": "Confirmed",
+    "ISSUED": "Issued",
+    "COMPLETED": "Completed",
+    "CANCELLED_BY_CLIENT": "Cancelled by client",
+    "CANCELLED_BY_SYSTEM": "Cancelled by system",
+    "PROBLEM": "Problem"
+  },
+  "bookings": {
+    "title": "Bookings",
+    "search": "Code, phone or name",
+    "statusFilter": "Status",
+    "from": "Starting from",
+    "to": "to",
+    "count": "{count, plural, one {# booking} other {# bookings}}",
+    "empty": "No bookings yet",
+    "emptyText": "Bookings from the app and manual ones will appear here.",
+    "emptyFiltered": "Nothing matches these filters",
+    "emptyFilteredText": "Reset the filters or change the dates.",
+    "col": {
+      "code": "Code",
+      "client": "Client",
+      "bike": "Bike",
+      "period": "Period",
+      "status": "Status",
+      "amount": "Amount"
+    },
+    "walkIn": "Walk-in",
+    "new": "New booking",
+    "allStatuses": "All statuses"
+  },
+  "booking": {
+    "back": "All bookings",
+    "title": "Booking {code}",
+    "client": "Client",
+    "phone": "Phone",
+    "bike": "Bike",
+    "period": "Period",
+    "method": {
+      "VIETQR": "VietQR",
+      "CASH": "Cash",
+      "RUB_TRANSFER": "Transfer in rubles"
+    },
+    "payment": "Payment",
+    "total": "Rent and extras",
+    "deposit": "Deposit",
+    "paid": "Received",
+    "status": "Status",
+    "changeStatus": "Change status",
+    "newStatus": "New status",
+    "reason": "Reason (for the log)",
+    "applyStatus": "Change",
+    "noNextStatus": "No transitions from this status.",
+    "statusChanged": "Status changed",
+    "history": "Status history",
+    "system": "System",
+    "payments": "Payments",
+    "documents": "Client documents",
+    "acts": "Handover reports",
+    "noHistory": "No status changes.",
+    "noPayments": "No payments.",
+    "noDocuments": "The client hasn't uploaded documents.",
+    "noActs": "No pickup or return reports yet.",
+    "openDocument": "Open",
+    "linkTtl": "The link opens in a new tab and works for 10 minutes.",
+    "docType": {
+      "PASSPORT": "Passport",
+      "LICENSE": "Driving licence",
+      "IDP": "International permit"
+    },
+    "docStatus": {
+      "UPLOADED": "Uploaded",
+      "VERIFIED": "Verified",
+      "REJECTED": "Rejected"
+    },
+    "actKind": {
+      "ISSUE": "Pickup",
+      "RETURN": "Return"
+    },
+    "actLine": "Odometer {km} km · fuel {fuel}%",
+    "actBy": "By {name}",
+    "clientConfirmed": "Client confirmed",
+    "damages": "Damage: {text}",
+    "showPhotos": "{count, plural, one {Show # photo} other {Show # photos}}",
+    "paymentKind": {
+      "RENT": "Rent",
+      "DEPOSIT": "Deposit",
+      "PREPAYMENT": "Prepayment",
+      "SURCHARGE": "Surcharge",
+      "REFUND": "Refund"
+    },
+    "paymentStatus": {
+      "PENDING": "Pending",
+      "PAID": "Paid",
+      "FAILED": "Failed",
+      "EXPIRED": "Expired",
+      "CANCELLED": "Cancelled"
+    },
+    "received": "received {amount}"
+  },
+  "chess": {
+    "title": "Fleet calendar",
+    "prev": "Earlier",
+    "next": "Later",
+    "today": "Today",
+    "bike": "Bike",
+    "hint": "Drag a booking onto another bike of the same model. On a phone, tap the booking.",
+    "moved": "Booking {code} moved to {plate}",
+    "moveTitle": "Booking {code}",
+    "moveTo": "Move to bike",
+    "move": "Move",
+    "openBooking": "Open booking",
+    "noBikes": "No bikes in the fleet",
+    "noBikesText": "Add bikes in the Fleet section.",
+    "repair": "Repair",
+    "retired": "Retired",
+    "buffer": "buffer",
+    "addHere": "New booking on {plate}",
+    "bar": "{code}, {client}, {status}"
+  },
+  "manual": {
+    "title": "Manual booking",
+    "text": "For a walk-in client. Same availability and rule checks as in the app.",
+    "model": "Model",
+    "bike": "Bike",
+    "anyBike": "Any free bike",
+    "start": "Pickup",
+    "end": "Return",
+    "timeHint": "Location time ({tz})",
+    "phone": "Client phone",
+    "phoneHint": "With country code: +84…",
+    "name": "Client name",
+    "lang": "Client language",
+    "method": "Payment",
+    "submit": "Create booking",
+    "created": "Booking {code} created",
+    "invalidDates": "Set pickup and return; return must be after pickup."
+  },
+  "audit": {
+    "title": "Activity log",
+    "empty": "No activity yet",
+    "emptyText": "Changes to bookings, payments and documents will appear here.",
+    "col": {
+      "at": "When",
+      "actor": "Who",
+      "action": "Action",
+      "entity": "Object",
+      "details": "Details"
+    },
+    "system": "System"
+  },
+  "errors": {
+    "BIKE_TAKEN": "Bike is busy: overlaps booking {code} (including buffer).",
+    "BIKE_TAKEN_ANY": "No free bike of this model for these dates.",
+    "BIKE_UNAVAILABLE": "The bike is in repair or retired.",
+    "BIKE_MODEL_MISMATCH": "You can only move to a bike of the same model.",
+    "BOOKING_CLOSED": "A completed or cancelled booking can't be moved.",
+    "UNAUTHORIZED": "Your session has ended. Sign in again."
+  },
+  "point": {
+    "label": "Location",
+    "all": "All locations"
+  },
+  "acts": {
+    "meta": "Bike condition before and after each rental. Files are private; viewing is logged.",
+    "search": "Plate or booking code",
+    "empty": "No photo acts yet",
+    "emptyText": "They appear after the first handover.",
+    "noAct": "No act yet",
+    "before": "Before rental",
+    "after": "After rental",
+    "prev": "Back",
+    "next": "Next"
+  },
+  "owners": {
+    "meta": "Figures and violations for each location this month. The button switches the whole admin panel to that location.",
+    "owner": "Owner: {names}",
+    "noOwner": "No owner assigned",
+    "managers": "Managers: {names}",
+    "income": "Income",
+    "profit": "Profit",
+    "bikes": "Bikes",
+    "rentals": "On rent",
+    "overdue": "Overdue",
+    "openIncidents": "Bike missing: open",
+    "recentIncidents": "Cases in {days} days",
+    "refunds": "Refunds due",
+    "outstanding": "Not received yet",
+    "noPhotos": "No photo act",
+    "lastActivity": "Last active",
+    "never": "never",
+    "openPoint": "Open as owner",
+    "incidentsTitle": "Waiting for a decision: {count}",
+    "noAnswer": "location did not answer"
+  },
+  "incident": {
+    "title": "Bike not at the location",
+    "open": "Open, waiting for a decision",
+    "present": "The bike is here",
+    "cancel": "Cancel with a full refund",
+    "cancelConfirm": "Cancel and return the full amount to the customer?",
+    "source": {
+      "CLIENT": "reported by customer",
+      "STAFF": "reported by staff",
+      "SYSTEM": "bike not returned"
+    },
+    "resolution": {
+      "SAME_MODEL": "Another bike of the same model issued",
+      "BIKE_PRESENT": "The bike was at the location",
+      "REPLACED": "Customer accepted a replacement",
+      "CANCELLED": "Cancelled with a full refund"
+    }
+  },
+  "documents": {
+    "meta": "Waiting for review: {count}",
+    "license": "Licence: {category}",
+    "licenseName": {
+      "A1": "A1",
+      "A": "A",
+      "NONE": "none"
+    },
+    "reason": "Reason",
+    "reasonHint": "The client sees this in the bot. For example: the number is unreadable.",
+    "rejectSend": "Reject and notify",
+    "verify": "Verified",
+    "reject": "Reject",
+    "empty": "Nothing here yet",
+    "saved": "Decision saved"
+  }
+}

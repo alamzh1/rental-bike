@@ -1,0 +1,167 @@
+{
+  "handover": {
+    "title": "Biên bản giao và trả xe",
+    "issue": "Giao xe",
+    "return": "Trả xe",
+    "confirmed": "Đã xác nhận",
+    "waiting": "Chờ xác nhận",
+    "plate": "Biển số",
+    "mileage": "Số km",
+    "km": "km",
+    "fuel": "Xăng",
+    "damages": "Hư hỏng",
+    "photo": "Ảnh biên bản",
+    "confirm": "Xác nhận biên bản",
+    "deductions": "Khấu trừ từ tiền cọc",
+    "depositRefund": "Tiền cọc được hoàn"
+  },
+  "title": "Đơn của tôi",
+  "tabs": {
+    "label": "Trạng thái đơn",
+    "active": "Đang thuê",
+    "upcoming": "Sắp tới",
+    "past": "Đã kết thúc"
+  },
+  "empty": {
+    "action": "Chọn xe",
+    "active": {
+      "title": "Bạn chưa nhận xe nào",
+      "text": "Đơn sẽ hiện ở đây sau khi bạn nhận xe."
+    },
+    "upcoming": {
+      "title": "Chưa có đơn sắp tới",
+      "text": "Chọn ngày và xe, đơn sẽ hiện ở đây."
+    },
+    "past": {
+      "title": "Chưa có đơn nào kết thúc",
+      "text": "Các lần thuê trước và đơn đã hủy sẽ hiện ở đây."
+    }
+  },
+  "error": {
+    "title": "Không tải được đơn"
+  },
+  "status": {
+    "PENDING_PAYMENT": "Chờ thanh toán",
+    "CONFIRMED": "Đã xác nhận",
+    "ISSUED": "Đã giao xe",
+    "COMPLETED": "Hoàn tất",
+    "CANCELLED_BY_CLIENT": "Đã hủy",
+    "CANCELLED_BY_SYSTEM": "Đã hủy",
+    "PROBLEM": "Có sự cố"
+  },
+  "card": {
+    "payWithin": "Thanh toán trong {time}",
+    "returnIn": "Còn {time} đến giờ trả xe",
+    "startsIn": "Còn {time} đến giờ nhận xe"
+  },
+  "confirmed": {
+    "title": "Đặt xe thành công"
+  },
+  "pending": {
+    "hold": "Giữ xe thêm",
+    "pay": "Đến trang thanh toán"
+  },
+  "qr": {
+    "label": "Mã QR của đơn {code}",
+    "hint": "Đưa mã này cho quản lý khi nhận xe."
+  },
+  "issued": {
+    "untilReturn": "Đến giờ trả xe"
+  },
+  "completed": {
+    "text": "Chuyến thuê đã kết thúc. Cảm ơn bạn!",
+    "depositBack": "Tiền cọc đã được hoàn lại."
+  },
+  "cancelled": {
+    "client": "Bạn đã hủy đơn này.",
+    "refund": "Hoàn lại:",
+    "notPaid": "Đơn bị hủy do không thanh toán kịp thời.",
+    "noShow": "Đơn bị hủy do bạn không đến nhận xe đúng giờ.",
+    "bikeMissing": "Không có xe tại điểm nên đơn đã bị hủy. Chúng tôi sẽ hoàn lại toàn bộ số tiền bạn đã trả."
+  },
+  "problem": {
+    "text": "Đơn này đang có sự cố. Hãy liên hệ quản lý để được hỗ trợ."
+  },
+  "details": {
+    "from": "Nhận xe",
+    "to": "Trả xe",
+    "pickup": "Địa chỉ nhận xe",
+    "deliveryAddress": "Địa chỉ giao xe",
+    "rent": "Tiền thuê",
+    "extras": "Tùy chọn thêm",
+    "delivery": "Giao xe",
+    "deposit": "Tiền cọc",
+    "deduction": "Khấu trừ từ tiền cọc",
+    "method": "Thanh toán",
+    "depositCash": "Tiền cọc, trả tiền mặt khi nhận xe"
+  },
+  "actions": {
+    "maps": "Mở trong Bản đồ",
+    "calendar": "Thêm vào lịch",
+    "contract": "Hợp đồng",
+    "fileError": "Không tải được tệp. Hãy thử lại.",
+    "contact": "Liên hệ quản lý",
+    "contactPlaceholder": "[LIÊN HỆ QUẢN LÝ — nhập trong cài đặt admin]",
+    "problem": "Báo sự cố",
+    "cancel": "Hủy đơn"
+  },
+  "cancel": {
+    "title": "Hủy đơn này?",
+    "text": "Nếu hủy bây giờ, bạn sẽ được hoàn tiền theo quy định hủy.",
+    "refund": "Hoàn {percent}% tiền thuê",
+    "rule": "Tiền cọc được hoàn đầy đủ. Càng gần giờ nhận xe, số tiền hoàn càng ít.",
+    "confirm": "Có, hủy đơn",
+    "keep": "Giữ đơn"
+  },
+  "problemSheet": {
+    "title": "Báo sự cố",
+    "text": "Chọn sự cố hoặc tự mô tả. Quản lý sẽ nhận được tin nhắn.",
+    "hints": "Sự cố thường gặp",
+    "hint": {
+      "wontStart": "Xe không nổ máy",
+      "accident": "Tai nạn hoặc hư hỏng",
+      "lostKey": "Mất chìa khóa",
+      "flatTire": "Thủng lốp",
+      "other": "Vấn đề khác"
+    },
+    "comment": "Chuyện gì đã xảy ra",
+    "send": "Gửi",
+    "sent": "Đã gửi tin nhắn, quản lý sẽ sớm liên hệ bạn.",
+    "contactHint": "Khẩn cấp? Hãy nhắn thẳng cho quản lý."
+  },
+  "contract": {
+    "title": "Hợp đồng thuê xe",
+    "text": "Mở hợp đồng, kiểm tra điều khoản và xác nhận.",
+    "open": "Mở hợp đồng",
+    "accept": "Tôi đồng ý với hợp đồng",
+    "accepted": "Đã xác nhận",
+    "waiting": "Chờ xác nhận",
+    "acceptedAt": "Bạn đã xác nhận hợp đồng lúc {date}."
+  },
+  "ending": {
+    "soonTitle": "Sắp hết thời gian thuê",
+    "soonText": "Vui lòng trả xe trước {date}. Địa chỉ: {address}",
+    "overdueTitle": "Đã hết thời gian thuê",
+    "overdueText": "Thời hạn trả xe là {date}. Vui lòng trả xe sớm nhất có thể hoặc liên hệ quản lý. Địa chỉ: {address}",
+    "overdueShort": "Đã quá hạn trả xe",
+    "banner": "{model}: trả xe trước {date}"
+  },
+  "missing": {
+    "button": "Không thấy xe tại điểm",
+    "title": "Không thấy xe tại điểm?",
+    "text": "Chúng tôi sẽ báo ngay cho điểm. Điểm sẽ đề xuất xe khác hoặc hủy đơn và hoàn toàn bộ tiền.",
+    "comment": "Chuyện gì đã xảy ra (không bắt buộc)",
+    "send": "Báo cho điểm",
+    "waitTitle": "Điểm đã biết và đang xử lý",
+    "waitText": "Nếu không có phản hồi, sau {minutes} phút bạn có thể hủy đơn và được hoàn toàn bộ tiền.",
+    "waitOver": "Điểm chưa phản hồi. Bạn có thể chờ hoặc hủy đơn và được hoàn toàn bộ tiền.",
+    "offerTitle": "Điểm đề xuất xe khác",
+    "offerText": "Thay cho xe của bạn: {model}, biển số {plate}.",
+    "offerFree": "Giá không đổi, bạn không phải trả thêm.",
+    "offerRefund": "Mẫu xe này rẻ hơn: chúng tôi hoàn lại {amount}.",
+    "accept": "Đồng ý đổi xe",
+    "cancel": "Hủy và hoàn toàn bộ tiền",
+    "others": "Xem xe ở các điểm khác",
+    "disputed": "Điểm cho biết xe vẫn có tại điểm, nên quản trị viên đang xem xét trường hợp này và sẽ liên hệ với bạn."
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "name": "@rental/api",
+  "version": "0.0.0",
+  "private": true,
+  "description": "NestJS: REST API, бот (grammY), очереди (BullMQ), Prisma + PostgreSQL 16.",
+  "scripts": {
+    "dev": "node ../../scripts/run-with-env.mjs nest start --watch --preserveWatchOutput",
+    "build": "nest build",
+    "start": "node dist/main.js",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "test:integration": "node ../../scripts/test-integration.mjs",
+    "db:generate": "prisma generate",
+    "db:migrate": "node ../../scripts/run-with-env.mjs prisma migrate dev",
+    "db:deploy": "node ../../scripts/run-with-env.mjs prisma migrate deploy",
+    "db:seed": "node ../../scripts/run-with-env.mjs tsx prisma/seed.ts",
+    "db:reset": "node ../../scripts/run-with-env.mjs prisma migrate reset --force"
+  },
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.700.0",
+    "@aws-sdk/s3-request-presigner": "^3.700.0",
+    "@nestjs/bullmq": "^10.2.3",
+    "@nestjs/common": "^10.4.22",
+    "@nestjs/core": "^10.4.22",
+    "@nestjs/jwt": "^10.2.0",
+    "@nestjs/platform-express": "^10.4.22",
+    "@nestjs/swagger": "^7.4.2",
+    "@prisma/client": "^5.22.0",
+    "@rental/i18n": "workspace:*",
+    "@rental/shared": "workspace:*",
+    "@sentry/node": "^8.55.2",
+    "bullmq": "^5.81.5",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.1",
+    "date-fns": "^3.6.0",
+    "date-fns-tz": "^3.2.0",
+    "grammy": "^1.46.0",
+    "pdfkit": "^0.15.2",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.1",
+    "sharp": "^0.35.5"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^10.4.9",
+    "@nestjs/testing": "^10.4.22",
+    "@swc/core": "^1.16.20",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.0",
+    "@types/pdfkit": "^0.13.8",
+    "@types/supertest": "^6.0.2",
+    "prisma": "^5.22.0",
+    "supertest": "^7.3.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.9.3",
+    "unplugin-swc": "^1.5.1",
+    "vitest": "^3.2.7"
+  }
+}
